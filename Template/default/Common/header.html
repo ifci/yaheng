@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--[if IE 7 ]><html class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html><!--<![endif]-->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge|chrome=1" />
+    <meta name="author" content="fcdcyy@sina.cn">
+    <meta name="Copyright" content="JKD TEAM">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,minimal-ui">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta http-equiv="cache-control" content="no-siteapp"/>
+    <title><if condition="CONTROLLER_NAME neq 'Index'">{$webtitle}-</if>{$site.name}</title>
+    <meta name="keywords" content="{$info['keywords'] ? $info['keywords'] : $site.keyword}">
+    <meta name="description" content="{$info['description'] ? $info['description'] : $site.description}">
+    <link rel="dns-prefetch" href="{:C('WEB_ROOT')}">
+    <link rel="shortcut icon" href="__ROOT__/favicon.ico">
+    <link type="text/css" href="__PUBLIC__/Min/?f=__CSS__/base.css|__CSS__/combo.css" rel="stylesheet" />
+    <script type="text/javascript" src="__PUBLIC__/Min/?f=__JS__/jquery-1.11.3.min.js|__JS__/main.js"></script>
+</head>
+
+<body>
+<div class="app_mask">
+    <div class="app_mask_cnt">
+        <span class="l-loading"></span>
+    </div>
+</div>
+<div class="header">
+    <div class="center pr">
+        <div id="menu" class="menu"><i></i></div>
+        <div class="menu_list">
+            <ul>
+                <nav posstion="top" order="sort DESC">
+                <li <if condition='$webtitle eq $nav_name'>class='on'</if>>
+                    <a href="<if condition='$link neq null'>{$link}<else />{:U('/'.$action)}</if>" title="{$nav_name}">
+                        {$nav_name}
+                    </a>
+                </li>
+                </nav>
+            </ul>
+            <div class="close">×</div>
+        </div>
+        <div class="sharebar">
+            <a href="#" title="" class="s_tel"><i></i></a>
+            <a href="#" title="" class="s_wx"><i></i></a>
+            <a href="#" title="" class="s_wb"><i></i></a>
+        </div>
+    </div>
+</div>
+<div class="bread">
+    <span>当前位置：</span><a href="__ROOT__/" title="首页">首页</a><i>></i><a href="{:U('/'.$b_url)}" title="{$webtitle}">{$webtitle}</a><if condition="$details eq 1"><i>></i><a href="__SELF__" title="{$info['title']}">{$info['title']}</a>
+</if>
+</div>

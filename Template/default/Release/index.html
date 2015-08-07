@@ -1,0 +1,15 @@
+<div class="content">
+    <!--新品发布-->
+    <div class="release">
+        <ul class="clearfix">
+            <li><img src="__IMG__/pic_17.jpg" alt=""/></li>
+            <volist name="list" id="vo">
+            <li><a href="{:U('/product_r/'.$vo['id'])}" title="{$vo.title}"><img src="{:get_default_img($vo['image_id'])}" alt="{$vo.title}"/><em></em><span>{$vo.title}</span></a></li>
+            </volist>
+        </ul>
+        <input type="hidden" id="total" value="{$total}"/>
+        <div class="paging">
+            <a href="javascript:" class="add_more">加载更多</a>
+        </div>
+    </div>
+</div>

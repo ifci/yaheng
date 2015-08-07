@@ -1,0 +1,46 @@
+<!--footer开始-->
+    <div id="footer">
+        <!--第十个内容块-->
+        <div class="cont_h10">
+            <div class="center clearfix">
+                <ul class="cont_ty45 clearfix">
+                    <li class="cont_ty46"  ><a href="__ROOT__/" title='首页'  ><span>首页</span></a></li>
+                    <nav posstion="top" order="sort DESC">
+                    <li>
+                        <a href="{$link}" title="{$nav_name}"><span>{$nav_name}</span></a>
+                    </li>
+                    </nav>
+                </ul>
+                <div class="cont_ty47 fl">
+                    九口袋公司地址: {$site.address}<br />
+                </div>
+                <div class="cont_ty48 fl">
+                    九口袋全国免费服务热线：<br />{$site.tel}
+                </div>
+                <div class="cont_ty49 tac fl">
+                    <img src="__IMG__/qr.png" alt="" />
+                    <i>九口袋网络官方微信</i>
+                </div>
+            </div>
+        </div>
+        <div class="flink tac qds">
+            九口袋友情链接：
+            <flink limit="6" order="sort DESC">
+            <a href="{$link}" <if condition="$target eq 2">target='_blank'</if> title="{$title}">{$title}</a><span>|</span>
+            </flink>
+        </div>
+        <div class="flink tac" style="padding-top:0;">
+        九口袋提供：
+        <a href="{:U('/lesson/index')}">三天两夜封闭课程</a>|
+        <a href="{:U('/service/index')}http://www.9koudai.org.cn/service/index.html">加速工厂落地操作</a>|
+        <a href="{:U('/service/index')}http://www.9koudai.org.cn/service/index.html">代运营入驻服务</a>|
+        <a href="http://www.9koudai.cn">手工网站建设业务</a>
+        <strong>九口袋--落地操作赚钱首选</strong>
+         <br />
+        Copyright © 2012-2015 www.9koudai.org.cn All Rights Reserved {$site.name} 版权所有 {$site.icp}      </div>
+    </div>
+    <!--footer结束-->
+
+</body>
+</html>
+

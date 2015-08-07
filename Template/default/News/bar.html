@@ -1,0 +1,33 @@
+<div class="news_l">
+    <ul class="news_cat">
+        <cat type="n" pid="1">
+        <?php $cv = $_GET['id'] ? $_GET['id'] : 2; ?>
+        <li class="<if condition="$cv eq $cid">news_on</if>">
+            <a href="{:U('news/'.$cid)}" title="">
+                <i></i>
+                <span>{$name}</span>
+            </a>
+        </li>
+        </cat>
+        <li>
+        <a href="{:U('news/'.$cid)}" title="">
+            <i></i>
+            <span>常见问题解答</span>
+        </a>
+        </li>
+
+        <li class="news_rcm">
+            <div class="news_rcm_t">
+                <i></i>
+                <span>推荐新闻</span>
+            </div>
+            <ul>
+                <news  limit="8" order="click DESC" >
+                <li>
+                    <a href="{:U('news_r/'.$new['id'])}" title="{:$new['title']}">{:cutStr($new['title'],24,0)}</a>
+                </li>
+                </news>
+            </ul>
+        </li>
+    </ul>
+</div>

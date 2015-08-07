@@ -1,0 +1,41 @@
+<!--主体内容-->
+<section>
+    <div class="main">
+        <div class="main_t">
+            <span>NEWS</span>
+            <em>新闻动态</em>
+            <b>|</b>
+            <i>{$cat}</i>
+        </div>
+
+        <div class="read">
+            <div class="read_t">
+                <h3>{$info.title}</h3>
+                <div class="date">
+                    时间：{$info['published']|date='Y-m-d',###}&nbsp;&nbsp;浏览次数：{$info['click']}
+                </div>
+            </div>
+            <div class="read_b">
+                {$info['content']}
+            </div>
+            <div class="read_s">
+                <div class="bshare-custom icon-medium"><a title="分享到" href="http://www.bShare.cn/" id="bshare-shareto" class="bshare-more">分享到</a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到微信" class="bshare-weixin"></a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis" style="display: none;"></a></div><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/button.js#style=-1&amp;uuid=7afd94bb-a7e8-4d65-9936-979b687f14eb&amp;pophcol=1&amp;lang=zh"></script><a class="bshareDiv" onclick="javascript:return false;"></a><script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+            </div>
+
+            <div class="read_np">
+                <div>
+                    <a href="{:$prev == null ? 'javascript:':U('News/read',array('id'=>$prev[id]))}" title="{$prev.title}">
+                        <i></i>
+                        <span>上一篇： {:$prev[title] == null ?'没有了':$prev[title]}</span>
+                    </a>
+                </div>
+                <div>
+                    <a href="{:$next == null ? 'javascript:':U('News/read',array('id'=>$next[id]))}" title="{next.title}">
+                        <i></i>
+                        <span>下一篇： {:$next[title] == null ?'没有了':$next[title]}</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

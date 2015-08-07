@@ -1,0 +1,18 @@
+<div class="main_ban wimg">
+    <!-- <img src="__IMG__/pic_111.jpg" alt="" /> -->
+    <img src="__UPLOAD__/picture/{$ad_info[0].ad_img}" alt="" />
+    <div class="main_nav center pr">
+        <div class="main_navbg"></div>
+        <div class="main_tel pa"><b>全国免费热线：{$site.tel}</b></div>
+        <div class="main_po pa">
+        	当前页面：
+        	<a href="__ROOT__/" title="">首页</a>
+        	>
+        	<a href="{:U($b_url)}" title="">{$webtitle}</a>
+        	<if condition="$details eq 1">
+        	>
+        	<a href="__SELF__" title="">{$info['title']}</a>
+        	</if>
+        </div>
+    </div>
+</div>

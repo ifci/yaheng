@@ -1,0 +1,13 @@
+<div class="news_l">
+    <ul class="news_cat">
+        <?php $cv = $_GET['id'] ? $_GET['id'] : $Tbar[0]['id']; ?>
+        <volist name="Tbar" id="vo" key="k">
+        <li class="<if condition="$cv eq $vo['id']">news_on</if>">
+        <a href="{:U('team/'.$vo['id'])}" title="{$vo.title}">
+            <i></i>
+            <span>{$vo.title}</span>
+        </a>
+        </li>
+        </volist>
+    </ul>
+</div>

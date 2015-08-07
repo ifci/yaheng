@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>{$webtitle}-{$site.name}</title>
+<meta name="keywords" content="{$site.keyword},{$info['keywords']}" />
+<meta name="description" content="{$site.description},{$info['description']}" />
+<css href="__PUBLIC__/Min/?f=__CSS__/base.css|__CSS__/index.css|__CSS__/main.css"/>
+<js href="__PUBLIC__/Min/?f=__JS__/jquery.js|__JS__/jquery.flexslider.min.js|__JS__/jquery.SuperSlide.2.1.1.js|__JS__/jquery.rotate.min.js|__JS__/index.js"/>
+<script>
+$(window).load(function() {
+    $('.flexslider').flexslider();      //引用幻灯片
+});
+</script>
+</head>
+
+<body>
+    <!--header开始-->
+    <div id="header" class="clearfix">
+        <!--logo开始-->
+        <div class="logo fl">
+            <div class="logo_t clearfix pr">
+                <a href="__ROOT__/"><img src="__IMG__/logo.png" alt="" /></a>
+               <!--  <a href="#" title=""></a> -->
+                <ul class="city_ul pa">
+                <volist name="area" id="vo" key="i">
+                    <li {$i == 1 ? 'class="city_active"' :'' }><a href="{$vo.c_url}" title="">{$i==1 ? '[' : ''}{$vo.area}{$i==1 ? ']' : ''}</a></li>
+                </volist>
+                </ul>
+                <!-- <select name="" id="" class="city_ul pa">
+                    <option value="上海">[ 上海 ]</option>
+                    <option value="杭州">[ 杭州 ]</option>
+                    <option value="成都">[ 成都 ]</option>
+                    <option value="广州">[ 广州 ]</option>
+                </select> -->
+            </div>
+            <div class="logo_b">
+                CCTV财经战略合作伙伴<br />
+                让中国制造成为世界品牌
+            </div>
+        </div>
+        <!--logo结束-->
+        <div class="header_r fr">
+            <div class="tel">
+                <b class="fr">免费热线电话：{$site.tel}</b>
+            </div>
+            <!--导航开始-->
+            <div class="nav">
+                <ul class="clearfix">
+                    <li class="{:CONTROLLER_NAME == 'Index'?'nav_on':''}"><a href="__ROOT__/">首页</a></li>
+                    <nav posstion="top" order="sort DESC">
+                    <li <if condition='$nav_name eq $webtitle'>class='nav_on'</if>">
+                        <a href="<if condition='$action eq null'>{$link}<else />{:U($action)}</if>" <if condition='$target eq 1'>target="_blank"</if>>{$nav_name}</a>
+                        <notempty name="child">
+                            <ul class="nav2">
+                                <volist name="child" id="nc">
+                                <li>
+                                    <a href="{:U($nc[action])}">{$nc.nav_name}</a>
+                                </li>
+                                </volist>
+                            </ul>
+                        </notempty>
+                    </li>
+                    </nav>
+                </ul>
+            </div>
+            <!--导航结束-->
+        </div>
+    </div>
+    <!--header结束-->
+
+
+

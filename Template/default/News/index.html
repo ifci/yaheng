@@ -1,0 +1,26 @@
+<!--content开始-->
+    <div id="content">
+        <div class="main_t">
+            <img src="__IMG__/pic_27.jpg" alt="15年专业生产皮草皮衣经验，紧跟国际流行趋势"/>
+        </div>
+        <div class="news_list">
+            <ul class="clearfix">
+                <volist name="list" id="vo">
+                <li>
+                    <div class="box"><a href="{:U('news_r/'.$vo['id'])}" title="{$vo.title}"><img src="{:get_default_img($vo['image_id'])}" alt="{$vo.title}"/></a></div>
+                    <div class="tit"><a href="{:U('news_r/'.$vo['id'])}" title="{$vo.title}">{$vo.title}</a></div>
+                    <div class="txt"><a href="{:U('news_r/'.$vo['id'])}" title="{$vo.summary}">{$vo.summary}</a></div>
+                    <div class="time">{:date('Y/m/d',$vo['published'])}</div>
+                </li>
+                </volist>
+            </ul>
+            <input type="hidden" id="total" value="{$total}"/>
+            <!--分页-->
+            <div class="paging">
+                <!--<a class="prev" href="#" title="上一页">上一页</a>
+                <a class="next" href="#" title="下一页">下一页</a>-->
+                <a href="javascript:" class="add_more">加载更多</a>
+            </div>
+        </div>
+    </div>
+    <!--content结束-->

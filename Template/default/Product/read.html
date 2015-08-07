@@ -1,0 +1,95 @@
+<link rel="stylesheet" href="__CSS__/swiper.min.css"/>
+<style>
+    /* Demo Syles */
+    .arrow-left,.arrow-right{
+        width: 48px;
+        height: 48px;
+        line-height: 46px;
+        position: absolute;
+        z-index: 2;
+        border: 1px solid #333;
+        margin-top: -24px;
+        background: rgba(0,0,0,.1);
+        top: 50%;
+        color: #0b0a0a;
+        font-family: Simsun;
+        font-size: 30px;
+        text-align: center;
+        -webkit-transition: inherit;
+        -moz-transition: inherit;
+        -ms-transition: inherit;
+        -o-transition: inherit;
+        transition: inherit;
+    }
+    .arrow-left {
+        left: 0;
+    }
+    .arrow-right {
+        right: 0;
+    }
+    .swiper-container {
+        height: 484px;
+        width: 400px;
+    }
+</style>
+<div class="content">
+    <div class="product center">
+        <div class="product_t clearfix">
+            <div class="product_tl">
+                <em>PRODUCT SERIES</em>
+                <span>产品系列</span>
+            </div>
+            <div class="product_tr">
+                摆脱束缚，追求自由。
+            </div>
+        </div>
+
+        <!--详情页-->
+        <div class="details">
+            <div class="details_box clearfix">
+                <div class="preview">
+                    <a class="arrow-left" href="#"><</a>
+                    <a class="arrow-right" href="#">></a>
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"> <img src="__IMG__/pic_13.jpg"> </div>
+                            <div class="swiper-slide"> <img src="__IMG__/pic_13.jpg"> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="itemInfo">
+                    <div class="tit">2015秋新款海宁真皮皮衣女短款修身机车夹克绵羊皮外套</div>
+                    <div class="pri">¥3000.00</div>
+                    <p class="mt40"><span>材质：</span>新西兰进口棉羊皮</p>
+                    <p><span>尺码：</span><a href="#">S</a><a href="#">M</a><a href="#">L</a></p>
+                    <p><span>颜色：</span>黑色</p>
+                    <div class="btn"><a href="#" title="立即购买">立即购买</a></div>
+                    <p class="teu">大牌定制，真皮皮衣。</p>
+                </div>
+            </div>
+
+            <!--简介-->
+            <div class="intro">
+                <div class="intro_t">产品介绍</div>
+                <div class="intro_c">
+                    <p class="tac"><img src="__IMG__/pic_40.jpg" alt=""/></p>
+                    <p class="tac"><img src="__IMG__/pic_41.jpg" alt=""/></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="__JS__/swiper.min.js"></script>
+<script>
+    var mySwiper = new Swiper('.swiper-container',{
+        loop: true
+    });
+    $('.arrow-left').on('click', function(e){
+        e.preventDefault();
+        mySwiper.swipePrev()
+    });
+    $('.arrow-right').on('click', function(e){
+        e.preventDefault();
+        mySwiper.swipeNext()
+    })
+</script>

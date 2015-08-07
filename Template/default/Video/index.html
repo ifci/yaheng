@@ -1,0 +1,26 @@
+<!--content开始-->
+    <div id="content">
+        <include file="Common:inside" />
+        <div class="main_t">
+            <div class="main_c">
+                <b>VIDEO</b>
+                <em>视频专区</em>
+            </div>
+        </div>
+        <div class="news center">
+            <div class="news_r vlist">
+                <ul>
+                    <volist name="list" id="vo">
+                    <li data-url="{$vo.url}">
+                        <div class="box">
+                            <img src="{:get_default_img($vo['image_id'])}" alt="{$vo.title}"/>
+                        </div>
+                        <div class="txt">{$vo.title}</div>
+                    </li>
+                    </volist>
+                </ul>
+            </div>
+            {$page}
+        </div>
+    </div>
+    <!--content结束-->

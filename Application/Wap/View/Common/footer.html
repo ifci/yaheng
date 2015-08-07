@@ -1,0 +1,21 @@
+    <!--底部-->
+    <div class="backtop">
+        <i class="iconfont">&#xe603;</i>
+    </div>
+    <footer>
+        <div class="footer_nav">
+            <ul>
+                <volist name="fnav" id="vo">
+                <li>
+                    <a href="<if condition='$vo.action eq null'>{$vo.link}<else />{:U($vo['action'])}</if>">{$vo.nav_name}</a><span>|</span>
+                </li>
+                </volist>
+            </ul>
+        </div>
+        <div class="footer_tel">
+            全国服务热线：{$site.tel}
+        </div>
+    </footer>
+    <script type="text/javascript" src="__PUBLIC__/Min/?f=__JS__/zepto.min.js|__JS__/touch.js|__JS__/index.js"></script>
+</body>
+</html>

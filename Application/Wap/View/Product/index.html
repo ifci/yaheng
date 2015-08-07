@@ -1,0 +1,26 @@
+<!--主体内容-->
+<section>
+    <div class="main">
+        <div class="main_t">
+            <span>portfolios</span>
+            <em>已投项目</em>
+        </div>
+        <volist name="ct" id="v" >
+        <div class="pro_tit">
+            <span>{$v.ename}</span>
+            <em>{$v.name}</em>
+        </div>
+        <div class="pro_list">
+            <ul>
+            <volist name="list" id="vo" empty="此分类暂无相关信息">
+                <if condition="$vo['cid'] eq $v['cid']">
+                <li>
+                    <a href="{$vo['url']}" target="_blank"><img src="{:get_default_img($vo['image_id'])}" alt=""/></a>
+                </li>
+                </if>
+            </volist>
+            </ul>
+        </div>
+        </volist>
+    </div>
+</section>

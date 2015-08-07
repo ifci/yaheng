@@ -1,0 +1,40 @@
+<!--主体内容-->
+<section>
+    <div class="main">
+        <div class="main_t">
+            <span>NEWS</span>
+            <em>新闻动态</em>
+        </div>
+
+        <div class="sidebar">
+            <volist name="ct" id="v" >
+            <div class="sidebar_t">
+                <span>{$v.name}</span>
+                <i class="iconfont">&#xe600;</i>
+            </div>
+            <div class="sidebar_b">
+                <ul>
+                    <volist name="list" id="vo" empty="此分类暂无相关信息">
+                    <if condition="$vo['cid'] eq $v['cid']">
+                    <li>
+                        <a href="{:U('news/read',array('id'=>$vo['id']))}">
+                            <div class="box">
+                                <img src="{:get_default_img($vo['image_id'])}" alt=""/>
+                            </div>
+                            <div class="con">
+                                <div class="tit">{$vo.title}</div>
+                                <div class="date">update：{:date('Y/m/d',$vo['published'])}</div>
+                                <div class="txt">{$vo.summary}</div>
+                            </div>
+                        </a>
+                    </li>
+                    </if>
+                    </volist>
+                </ul>
+            </div>
+
+            </volist>
+
+        </div>
+    </div>
+</section>
