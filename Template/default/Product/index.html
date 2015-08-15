@@ -1,23 +1,5 @@
 <link rel="stylesheet" href="__CSS__/swiper.min.css"/>
 <link rel="stylesheet" href="__CSS__/idangerous.swiper.scrollbar.css"/>
-<style>
-    .swiper-container {
-        width: auto;
-    }
-    .swiper-slide {
-        color:#fff;
-        font-size:14px;
-        text-align:center;
-        /*width: 80px;*/
-        margin-right: 10px;
-        border: 1px solid #bcbcbc;
-    }
-    .swiper-scrollbar {
-        height:10px;
-        margin:20px auto;
-        width: 880px;
-    }
-</style>
 <div class="content">
     <div class="product center">
         <div class="product_t clearfix">
@@ -33,23 +15,20 @@
             <!--侧栏-->
             <div class="side">
                 <div class="slide">
-                    <div class="slide_t"><a href="#" title="皮衣系列">皮衣系列</a></div>
-                    <div class="slide_t"><a href="javascript:" title="皮草系列">皮草系列 <i></i></a></div>
-                    <div class="slide_c">
-                        <ul>
-                            <li><a href="#" title="羊毛皮外套"><i></i>羊毛皮外套</a></li>
-                            <li><a href="#" title="狐狸毛外套"><i></i>狐狸毛外套</a></li>
-                            <li><a href="#" title="貉子毛外套"><i></i>貉子毛外套</a></li>
-                            <li><a href="#" title="水貂外套"><i></i>水貂外套</a></li>
-                            <li><a href="#" title="兔毛皮外套"><i></i>兔毛皮外套</a></li>
-                            <li><a href="#" title="皮毛一体系列"><i></i>皮毛一体系列</a></li>
-                            <li><a href="#" title="皮草配饰"><i></i>皮草配饰</a></li>
-                        </ul>
-                    </div>
+                    <volist name="cate_list" id="vo">
+                        <div class="slide_t"><a href="javascript:" title="{$vo.name}" data-cid="{$vo.id}">{$vo.name}</a></div>
+                        <div class="slide_c">
+                            <ul>
+                                <volist name="vo[voo]" id="sub">
+                                    <li><a href="javascript:" title="{$sub.name}" data-cid="{$vo.id}"><i></i>{$sub.name}</a></li>
+                                </volist>
+                            </ul>
+                        </div>
+                    </volist>
                 </div>
                 <div class="side_c">
                     高级定制，<br/>“奢华需要精致的细节表现”
-                    <a href="#" title="我要定制">我要定制</a>
+                    <a href="tencent://message/?uin={$site.qq}" title="我要定制">我要定制</a>
                 </div>
                 <div class="side_b">
                     <i></i><em>联系热线</em><span>{$site.tel}</span>
@@ -61,14 +40,9 @@
                 <div class="pshow">
                     <div class="pshow_bt">
                         <div class="bd">
-                            <a href="#" class="on">2015春夏</a>
-                            <a href="#">2015秋冬</a>
-                            <a href="#">2014春夏</a>
-                            <a href="#">2014秋冬</a>
-                            <a href="#">2013春夏</a>
-                            <a href="#">2013秋冬</a>
-                            <a href="#">2012春夏</a>
-                            <a href="#">2012秋冬</a>
+                            <volist name="season" id="vo" key="k">
+                            <a href="javascript:" <if condition="$k eq 1"> class="on"</if> data-season="{$vo.name}">{$vo.name}</a>
+                            </volist>
                         </div>
                         <div class="hd">
                             <a href="javascript:"><</a>
@@ -76,12 +50,12 @@
                         </div>
                     </div>
                     <div class="plist">
-                        <ul>
-                            <li><a href="{:U('Product/read',array('id'=>39))}" title="羊毛皮外套"><img src="__IMG__/pic_13.jpg" alt="羊毛皮外套"/><em></em><span>羊毛皮外套</span></a></li>
-                            <li><a href="#" title="羊毛皮外套"><img src="__IMG__/pic_13.jpg" alt="羊毛皮外套"/><em></em><span>羊毛皮外套</span></a></li>
-                            <li><a href="#" title="羊毛皮外套"><img src="__IMG__/pic_13.jpg" alt="羊毛皮外套"/><em></em><span>羊毛皮外套</span></a></li>
-                            <li><a href="#" title="羊毛皮外套"><img src="__IMG__/pic_13.jpg" alt="羊毛皮外套"/><em></em><span>羊毛皮外套</span></a></li>
+                        <ul class="clearfix">
+                            <volist name="list" id="vo">
+                            <li><a href="{:U('product_r/'.$vo['id'])}" title="{$vo.title}"><img src="{:get_default_img($vo['image_id'])}" alt="{$vo.title}"/><em></em><span>{$vo.title}</span></a></li>
+                            </volist>
                         </ul>
+                        {$page}
                     </div>
                 </div>
             </div>
@@ -92,24 +66,4 @@
 <script src="__JS__/swiper.min.js"></script>
 <script src="__JS__/idangerous.swiper.scrollbar.js"></script>
 <script>
-    var mySwiper = new Swiper('.swiper-container',{
-        loop: true,
-        slidesPerView: 8,
-        //Enable Scrollbar
-        scrollbar: {
-            container :'.swiper-scrollbar',
-            hide: false,
-            draggable: true,
-            snapOnRelease: true
-        }
-    });
-
-    $('.arrow-left').on('click', function(e){
-        e.preventDefault();
-        mySwiper.swipePrev()
-    });
-    $('.arrow-right').on('click', function(e){
-        e.preventDefault();
-        mySwiper.swipeNext()
-    })
 </script>

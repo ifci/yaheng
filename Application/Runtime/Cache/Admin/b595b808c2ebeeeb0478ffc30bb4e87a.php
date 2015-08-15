@@ -5,7 +5,7 @@
         <title>后台管理首页-<?php echo ($site["SITE_INFO"]["name"]); ?></title>
         <?php $addCss=""; $addJs=""; $currentNav ='网站管理 > 系统信息'; ?>
         <link rel="stylesheet" type="text/css" href="/yaheng/Public/Min/?f=/yaheng/Public/Admin/Css/base.css|/yaheng/Public/Admin/Css/layout.css|/yaheng/Public/Js/asyncbox/skins/default.css<?php echo ($addCss); ?>" />
-<script type="text/javascript" src="/yaheng/Public/Min/?f=/yaheng/Public/Js/jquery-1.9.0.min.js|/yaheng/Public/Js/jquery.lazyload.js|/yaheng/Public/Js/functions.js|/yaheng/Public/Admin/Js/base.js|/yaheng/Public/Js/jquery.form.js|/yaheng/Public/Js/asyncbox/asyncbox.js<?php echo ($addJs); ?>"></script>
+<script type="text/javascript" src="/yaheng/Public/Min/?f=/yaheng/Public/Js/jquery-1.9.0.min.js|/yaheng/Public/Js/functions.js|/yaheng/Public/Admin/Js/base.js|/yaheng/Public/Js/jquery.form.js|/yaheng/Public/Js/asyncbox/asyncbox.js<?php echo ($addJs); ?>"></script>
     </head>
     <body>
         <div class="wrap">

@@ -1,26 +1,29 @@
 <!--主体内容-->
 <section>
-    <div class="main">
-        <div class="main_t">
-            <span>portfolios</span>
-            <em>已投项目</em>
-        </div>
-        <volist name="ct" id="v" >
-        <div class="pro_tit">
-            <span>{$v.ename}</span>
-            <em>{$v.name}</em>
-        </div>
-        <div class="pro_list">
-            <ul>
-            <volist name="list" id="vo" empty="此分类暂无相关信息">
-                <if condition="$vo['cid'] eq $v['cid']">
-                <li>
-                    <a href="{$vo['url']}" target="_blank"><img src="{:get_default_img($vo['image_id'])}" alt=""/></a>
-                </li>
-                </if>
+    <div class="product">
+        <img src="__IMG__/pic_23.jpg" alt=""/>
+        <div class="side">
+            <volist name="cate_list" id="vo">
+            <div class="side_t">
+                <a href="__WAP__/product/{$vo.cid}">
+                    <i></i>
+                    <span>{$vo.name}</span>
+                    <em>></em>
+                </a>
+            </div>
+            <div class="side_c">
+                <ul>
+                    <volist name="vo[voo]" id="sub">
+                    <li>
+                        <a href="__WAP__/product/{$vo.cid}">
+                            <span>{$sub.name}</span>
+                            <em>></em>
+                        </a>
+                    </li>
+                    </volist>
+                </ul>
+            </div>
             </volist>
-            </ul>
         </div>
-        </volist>
     </div>
 </section>

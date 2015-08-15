@@ -17,31 +17,12 @@ return array(
         'product/'    => 'product/index',
         'product/:cid\d'    => 'product/index',
 
-
-        /*团队*/
-        'team/'    => 'team/index',
-        'team_r/:id\d'    => 'team/read',
-
-
          /*单页*/
         'page/:name'    => 'page/index',
 
 
-        /*科学孕育一站式*/
-        'station' => 'station/index',
+        'enroll' => 'haute/enroll',
 
-        /*科研合作*/
-        'coope' => 'coope/index',
-
-
-        /*联系我们*/
-        'contact' => 'contact/index',
-
-        /*关于昕朗*/
-        'about' => 'about/index',
-
-        /*课程设置*/
-        'course' => 'course/index',
 
     ),
 );

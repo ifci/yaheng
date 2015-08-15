@@ -52,18 +52,19 @@
                     <a class="arrow-right" href="#">></a>
                     <div class="swiper-container">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"> <img src="__IMG__/pic_13.jpg"> </div>
-                            <div class="swiper-slide"> <img src="__IMG__/pic_13.jpg"> </div>
+                            <volist name="images" id="vo">
+                            <div class="swiper-slide"> <img src="{$vo.savepath}"> </div>
+                            </volist>
                         </div>
                     </div>
                 </div>
                 <div class="itemInfo">
-                    <div class="tit">2015秋新款海宁真皮皮衣女短款修身机车夹克绵羊皮外套</div>
-                    <div class="pri">¥3000.00</div>
-                    <p class="mt40"><span>材质：</span>新西兰进口棉羊皮</p>
-                    <p><span>尺码：</span><a href="#">S</a><a href="#">M</a><a href="#">L</a></p>
-                    <p><span>颜色：</span>黑色</p>
-                    <div class="btn"><a href="#" title="立即购买">立即购买</a></div>
+                    <div class="tit">{$info.title}</div>
+                    <div class="pri">¥{$info.price}</div>
+                    <p class="mt40"><span>材质：</span>{$info.material}</p>
+                    <p><span>尺码：</span>{$info.psize}</p>
+                    <p><span>颜色：</span>{$info.pcolor}</p>
+                    <div class="btn"><a href="{$info.url}" title="立即购买" target="_blank">立即购买</a></div>
                     <p class="teu">大牌定制，真皮皮衣。</p>
                 </div>
             </div>
@@ -72,8 +73,7 @@
             <div class="intro">
                 <div class="intro_t">产品介绍</div>
                 <div class="intro_c">
-                    <p class="tac"><img src="__IMG__/pic_40.jpg" alt=""/></p>
-                    <p class="tac"><img src="__IMG__/pic_41.jpg" alt=""/></p>
+                    {$info.content}
                 </div>
             </div>
         </div>

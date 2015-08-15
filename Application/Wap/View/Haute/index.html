@@ -1,0 +1,87 @@
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="__CSS__/swiper.min.css">
+
+<!-- Demo styles -->
+<style>
+    .swiper-container {
+        height: 100%;
+        margin: 1em auto 0;
+        width: 80%;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+
+        /* Center slide text vertically */
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        align-items: center;
+    }
+    .swiper-pagination-bullet-active{
+        background-color: #333;
+    }
+</style>
+<section>
+    <div class="haute">
+        <div class="haute_t">
+            <h4>高级定制案例展示</h4>
+            <div class="ftxt">高级定制，“奢华需要精致的细节表现”</div>
+            <div class="tel">
+                <i></i>
+                <span>联系热线</span>
+                <em>{$site.tel}</em>
+            </div>
+        </div>
+        <div class="haute_c">
+            <!-- Swiper -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <volist name="case" id="vo">
+                    <div class="swiper-slide"><img src="{:get_default_img($vo['image_id'])}" alt=""/></div>
+                    </volist>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+
+            <!-- Swiper JS -->
+            <script src="__JS__/swiper.min.js"></script>
+
+            <!-- Initialize Swiper -->
+            <script>
+                var swiper = new Swiper('.swiper-container', {
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true
+                });
+            </script>
+        </div>
+
+        <div class="haute_t">
+            <h4>高级定制流程</h4>
+            <div class="ftxt">高级定制，“奢华需要精致的细节表现”</div>
+            <div class="tel">
+                <i></i>
+                <span>联系热线</span>
+                <em>{$site.tel}</em>
+            </div>
+        </div>
+        <div class="haute_c">
+            <ul class="haute_list">
+                {$dz[0].content}
+            </ul>
+            <div class="haute_btn">
+                <a href="__WAP__/enroll">我要定制</a>
+            </div>
+        </div>
+    </div>
+</section>

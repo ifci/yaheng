@@ -12,57 +12,54 @@ class HauteController extends BaseController {
      * 列表页
      */
     public function index(){
-        $P = M("Product");
-        $C = M("Category");
-        /*$cid=I('get.cid');*/
-        /*echo $cid;*/
-        if($cid){
-            $map['cid']=$cid;
-        }
-        $map['status']=1;
-        $map['lang']=LANG_SET;
-        /*$count = $P->table($P->getTableName().' p')
-            ->join($C->getTableName().' c on c.cid=p.cid')
-            ->field('p.id')
-            ->where($map)->count();
-        $page = new \Think\Page($count,C('LISTNUM.prolist'));
-        $showPage = $page->show();
-        $this->assign("page", $showPage);*/
-        /*$list=$P->table($P->getTableName().' p')
-            ->join($C->getTableName().' c on c.cid=p.cid')
-            ->field('p.id,p.cid,p.image_id,p.price,p.psize,p.title,p.ename,p.url,p.description,p.update_time,p.click,c.name as cname')
-            ->where($map)->order('id desc')->limit("$page->firstRow, $page->listRows")->select();*/
-        $list = $P -> where($map) -> order('id desc') -> select();
-        $this->assign("list", $list);
+        /*案例展示*/
+        $case = M("Case") -> where('status=1') -> order('sort asc') -> select();
+        $this -> assign('case', $case);
 
-        $this->assign("ad_info", $this->getAd('bottom'));
+        /*定制流程*/
+
+        $map['unique_id'] = 'dzlc';
+        $map['display'] = 1;
+
+        $dz=M('page')->where($map)->select();
+        $this -> assign('dz',$dz);
         $this->assign('webtitle',L('T_HAUTE'));
         $this->display();
     }
-    /**
-     * 详情页
-     */
-    public function read(){
-        $id=I('get.id');
-        $m_product=M('product');
-        if(!$id){$this->_empty($id);}
-        $map['id']=$id;
-        if($info=$m_product->where($map)->find()){
-            if($info['status']==0){
-                $this->redirect('product/index');
-            }
-            $C = M("Category");
-            $map2['cid']=$info['cid'];
-            $info['cname']=$C->where($map2)->getField('name');
-            $this->assign('info',$info);
-            $this->assign('images',get_img_array($info['image_id']));
-            $m_product->where($map)->setInc('click',1);
-            $this->assign('webtitle',$info['title'].'-'.L('T_PRODUCT'));
-            $this->assign("ad_info", $this->getAd('bottom'));
-            $this->display();
+
+
+    public function enroll(){
+
+        $data['uname']=I('post.uname');
+        $data['tel']=I('post.tel');
+        $data['email']=I('post.email');
+        $data['address']=I('post.address');
+        $data['text']=I('post.text');
+        $data['addtime']=time();
+        $message=M('message');
+        if(!$_POST['uname']){
+            $this -> ajaxReturn(array('tip' => 0, 'info' => '请填写姓名'));
+        }else if(!usedExp($_POST['uname'], 'chineseExp')) {
+            $this -> ajaxReturn(array('tip' => 0, 'info' => '姓名格式错误！'));
+        }else if(!$_POST['tel']){
+            $this -> ajaxReturn(array('tip' => 0, 'info' => '请填写电话号码'));
+        }else if(!usedExp($_POST['tel'], 'phoneExp')) {
+            $this -> ajaxReturn(array('tip' => 0, 'info' => '手机号码格式错误！'));
+        }else if($message->add($data)){
+            $this -> ajaxReturn(array('tip' => 1, 'info' => '留言成功，我们会尽快与您联系'));
         }else{
-            $this->redirect('product/index');
-        }
+            $this -> ajaxReturn(array('tip' => 0, 'info' => '留言失败'));
+        }/*else if($_POST['code']) {
+            if($_POST['code'] == $_COOKIE['code']){
+                $this -> ajaxReturn(array('tip' => 2, 'info' => '请勿重复提交'));
+            }else if($message->add($data)){
+                cookie('code', $_POST['code'], 600);
+                $this -> ajaxReturn(array('tip' => 2, 'info' => '留言成功'));
+            }else{
+                $this -> ajaxReturn(array('tip' => 2, 'info' => '留言失败'));
+            }
+        }*/
+
     }
 
 }

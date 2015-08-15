@@ -25,6 +25,12 @@ return array(
     'TAGLIB_BUILD_IN' => 'Cx,Html,Weblock',//标签库类名
     'URL_ROUTER_ON'   => true,// 开启路由
     'LOAD_EXT_CONFIG' => 'router',
+    'URL_ROUTE_RULES'=>array(
+        'enroll'    => 'haute/enroll',
+        'news_r/:id\d'    => 'news/read',
+        'product/:cid\d'    => 'product/catelist',
+        'product_r/:id\d'    => 'product/read',
+    ),
 
     'URL_HTML_SUFFIX'       => C('TOKEN.URL_HTML_SUFFIX'),  // URL伪静态后缀设置
     'URL_MODEL' =>C('TOKEN.false_static'),// URL伪静态设置/开启，关闭
@@ -41,6 +47,7 @@ return array(
     /* 模板相关配置 */
     'TMPL_PARSE_STRING' => array(
         '__UPLOAD__' => __ROOT__ . '/Uploads',
+        '__WAP__' => __ROOT__ . '/wap',
         '__STATIC__' => __ROOT__ . '/Public',
         '__IMG__'    => __ROOT__ . '/Public/Wap/images',
         '__CSS__'    => __ROOT__ . '/Public/Wap/css',
@@ -52,5 +59,4 @@ return array(
     'TOKEN_ON' => false,
 );
 
-//return array_merge($config_arr1, $config_arr2);
 ?>

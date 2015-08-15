@@ -10,6 +10,12 @@ use Think\Controller;
 class BaseController extends Controller{
 
     public function _initialize(){
+
+        if(isMobile()){
+            header("Location: ".__ROOT__."/wap");
+        }
+
+
         $this->assign("site", C('SITE_INFO'));
         $this->assign("area", M('company')->select());
         if(I('get.'.C('VAR_LANGUAGE'))){
@@ -30,11 +36,11 @@ class BaseController extends Controller{
     public function getAd($pname=''){
         $m_ad=M('ad');
         $mname=strtolower(CONTROLLER_NAME);
-        $aname=strtolower(ACTION_NAME);
+//        $aname=strtolower(ACTION_NAME);
         $map['lang']=LANG_SET;
-        if($mname=='index' && $aname=='index'){
+        /*if($mname=='index' && $aname=='index'){
             $map['position']='index';
-        }/*else{
+        }else{
             switch($pname){
                 case 'news':
                     $map['position']=array(array('eq','news'),array('eq','all'),'or');

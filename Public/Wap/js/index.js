@@ -52,23 +52,48 @@
 })(Zepto);
 
 $(function(){
-
 	$('.nav_btn').on('tap', function(){
-
-        if(!($('.nav_on').length < 1)){
-            $('.main').on('tap', function(){
-                $('.nav_list').addClass('nav_on');
-            });
-        }
-        $('.nav_list').toggleClass('nav_on');
+        $('.nav').toggleClass('nav_on');
 	});
-    /**/
 
 
-	$('.backtop').bTop();
-
-    $('.sidebar').sfq({
-        hd: '.sidebar_t',
-        bd: '.sidebar_b'
+    var page = 1;
+    var sPage = function(json){
+        $.ajax({
+            url : "catelist",
+            type: "post",
+            data: json,
+            dataType: "json",
+            success: function(data){
+                if(data){
+                    var str = '';
+                    $.each(data, function(i, v){
+                        str += '<li>'
+                            + '<a href="../product_r/' + v.id + '">'
+                            + '<div class="box">'
+                            + '<img src="' + v.savapath + '" alt=""/>'
+                            + '</div>'
+                            + '<div class="tit">' + v.title + '</div>'
+                            + '</a>'
+                            + '</li>';
+                    });
+                    $('.plist ul').html(str);
+                }else{
+                    $('.plist ul').html('<div class="empty">暂无相关信息!</div>');
+                }
+            }
+        })
+    };
+    $('.pshow_t .swiper-slide').on('click', function(){
+        var sid = $(this).data('sid'),
+            json = {
+                sid: sid
+            };
+        $(this).addClass('on').siblings().removeClass('on');
+        sPage(json);
     });
+
+    $(window).scroll(function(){
+        console.log($('body').scrollHeight);
+    })
 });

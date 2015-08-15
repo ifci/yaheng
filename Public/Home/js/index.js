@@ -129,7 +129,7 @@ $(function(){
         setTimeout(function(){
             T.addClass('animated');
         }, i * 800);
-    })
+    });
 
     swiper.addCallback('SlideChangeStart', function(swiper){
         var $left = $('.arrow-left'),$right = $('.arrow-right');
@@ -197,6 +197,9 @@ $(function(){
         $(".t_key").children().eq(cur).fadeIn().siblings().fadeOut();
         cur++;
         cur > 1 ? cur = 0 : false;
-    }, 1500)
+    }, 1500);
+
+
+
 
 });

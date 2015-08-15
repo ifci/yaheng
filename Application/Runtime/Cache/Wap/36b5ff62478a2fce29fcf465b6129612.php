@@ -16,7 +16,7 @@
             padding:230px 0 0;
             overflow:hidden;
             xxxxborder:1px solid;
-            background-image: url(/yuanzhan/Public/Img/Main.jpg);
+            background-image: url(/yaheng/Public/Img/Main.jpg);
             background-repeat: no-repeat;
         }
         h2{
@@ -59,7 +59,7 @@
 <body>
 <h1></h1>
 <p class="link">
-    <a href="/yuanzhan">&#9666;返回首页</a>
+    <a href="/yaheng">&#9666;返回首页</a>
     <a href="javascript:history.go(-1);">&#9666;返回上一页</a>
 </p>
 <dl class="texts">

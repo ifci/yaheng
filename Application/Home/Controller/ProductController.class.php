@@ -14,25 +14,45 @@ class ProductController extends BaseController {
     public function index(){
         $P = M("Product");
         $C = M("Category");
-        /*$cid=I('get.cid');*/
-        /*echo $cid;*/
+        $cid=I('get.cid');
         if($cid){
             $map['cid']=$cid;
         }
+
+
         $map['status']=1;
         $map['lang']=LANG_SET;
-        /*$count = $P->table($P->getTableName().' p')
-            ->join($C->getTableName().' c on c.cid=p.cid')
+
+
+
+        /*输出分类*/
+        $cate = $C -> field('cid, pid, name') -> where("type='p' and pid='0'") -> order('cid asc') -> select();
+        foreach($cate as $n => $val){
+            $cate[$n]['voo'] = $C -> where('pid='.$val['cid']) -> select();
+        }
+
+        $this -> assign('cate_list', $cate);
+
+
+        /*输出季节*/
+
+        $season = $C -> where("type='s'") -> order('cid desc') -> select();
+
+        $this -> assign('season', $season);
+
+        /*输出默认产品*/
+        $count = $P->table($P->getTableName().' p')
+//            ->join($C->getTableName().' c on c.cid=p.cid')
             ->field('p.id')
             ->where($map)->count();
         $page = new \Think\Page($count,C('LISTNUM.prolist'));
         $showPage = $page->show();
-        $this->assign("page", $showPage);*/
+        $this->assign("page", $showPage);
         /*$list=$P->table($P->getTableName().' p')
             ->join($C->getTableName().' c on c.cid=p.cid')
             ->field('p.id,p.cid,p.image_id,p.price,p.psize,p.title,p.ename,p.url,p.description,p.update_time,p.click,c.name as cname')
             ->where($map)->order('id desc')->limit("$page->firstRow, $page->listRows")->select();*/
-        $list = $P -> where($map) -> order('id desc') -> select();
+        $list = $P -> where($map) -> limit("$page->firstRow, $page->listRows") -> order('id desc') -> select();
         $this->assign("list", $list);
 
         $this->assign("ad_info", $this->getAd('bottom'));
@@ -43,11 +63,11 @@ class ProductController extends BaseController {
      * 详情页
      */
     public function read(){
-        $id=I('get.id');
-        $m_product=M('product');
-        if(!$id){$this->_empty($id);}
+        $id = I('get.id');
+        $P = M('product');
+        !$id ? $this->_empty($id) : false;
         $map['id']=$id;
-        if($info=$m_product->where($map)->find()){
+        if($info = $P ->where($map)->find()){
             if($info['status']==0){
                 $this->redirect('product/index');
             }
@@ -56,7 +76,7 @@ class ProductController extends BaseController {
             $info['cname']=$C->where($map2)->getField('name');
             $this->assign('info',$info);
             $this->assign('images',get_img_array($info['image_id']));
-            $m_product->where($map)->setInc('click',1);
+            $P -> where($map)->setInc('click',1);
             $this->assign('webtitle',$info['title'].'-'.L('T_PRODUCT'));
             $this->assign("ad_info", $this->getAd('bottom'));
             $this->display();

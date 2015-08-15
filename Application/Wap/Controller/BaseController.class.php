@@ -10,6 +10,12 @@ use Think\Controller;
 class BaseController extends Controller{
 
     public function _initialize(){
+
+        if(!isMobile()){
+            header("Location: ".__ROOT__);
+        }
+
+
         $this->assign("site", C('SITE_INFO'));
         $this->assign("area", M('company')->select());
         if(I('get.'.C('VAR_LANGUAGE'))){
@@ -17,13 +23,11 @@ class BaseController extends Controller{
         }
 //        头部导航
         $N = M("Nav");
-        $action = $N -> field('id,nav_name,nav_rename,link,action') -> where('type="top"') -> order('sort desc') -> select();
+        $action = $N -> field('id,nav_name,link,action') -> where('type="top"') -> order('sort desc') -> select();
         $this -> assign('nav', $action);
 
-//        底部导航
-
-        $fnav = $N -> field('id,nav_name,link,action') -> where('type="bottom"') -> order('sort desc') -> select();
-        $this -> assign('fnav', $fnav);
+        $webtitle = $N -> where("action='".CONTROLLER_NAME."'")->getField('nav_name');
+        $this->assign('webtitle',$webtitle);
 
     }
 

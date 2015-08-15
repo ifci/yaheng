@@ -105,6 +105,7 @@ class Match{
         //utf8下匹配中文
         $RegExp ='/([\x{4e00}-\x{9fa5}]){1}/u';
 //        $RegExp ='/^[/u4e00-/u9fa5]*$/';
+//        $RegExp ='/^[\x{4e00}-\x{9fa5}]+$/u';
         $result = preg_match($RegExp,$str);
         return $result;
     }

@@ -5,29 +5,8 @@
  * Date: 14-3-7
  * Time: 上午10:15
  */
-/**
- * 获取默认图片
- * @param $str
- * @return bool|mixed
- */
-function get_default_img($str){
-    if(!$str)return false;
-    $str_arr=explode(',',$str);
-    $map['id']=$str_arr[0];
-    return M('images')->where($map)->getField('savepath');
-}
 
-/**
- * 获取图片集
- * @param $str
- * @return bool|mixed
- */
-function get_img_array($str){
-    if(!$str)return false;
-    $str_arr=@explode(',',$str);
-    $map['id']=array('in',$str_arr);
-    return M('images')->where($map)->field('savepath')->select();
-}
+
 
 /**
  * 分类面包屑导航
@@ -48,3 +27,15 @@ function conist_nav($cid,$flag=false){
 }
 
 
+
+/**
+ * 获取默认图片
+ * @param $str
+ * @return bool|mixed
+ */
+/*function get_default_img($str){
+    if(!$str)return false;
+    $str_arr=explode(',',$str);
+    $map['id']=$str_arr[0];
+    return M('images')->where($map)->getField('savepath');
+}*/

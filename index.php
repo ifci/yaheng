@@ -18,17 +18,6 @@ ini_set('date.timezone', 'Asia/Shanghai');
 define('APP_DEBUG',true);
 
 
-$ua = strtolower($_SERVER['HTTP_USER_AGENT']);
-$uachar = "/(nokia|sony|ericsson|mot|samsung|sgh|lg|philips|panasonic|alcatel|lenovo|cldc|midp|mobile)/i";
-if(($ua == '' || preg_match($uachar, $ua)) && $_SERVER['SERVER_NAME'] != 'yz.lighthousecapital.cn/wap')
-{
-    $agent = strtolower($_SERVER['HTTP_USER_AGENT']);
-    $is_ipad = (strpos($agent, 'ipad')) ? true : false;
-    if(!$is_ipad){
-        header("Location: Wap/");
-        exit;
-    }
-}
 // 定义应用目录
 define('APP_PATH','./Application/');
 define("WEB_ROOT", dirname(__FILE__) . "/Application/");

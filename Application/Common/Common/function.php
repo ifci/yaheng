@@ -426,4 +426,91 @@ function usedExp($str = '', $type = '')
     return $match->$type($str);
 }
 
+
+function isMobile(){
+// 如果有HTTP_X_WAP_PROFILE则一定是移动设备
+    if (isset ($_SERVER['HTTP_X_WAP_PROFILE']))
+        return true;
+
+//此条摘自TPM智能切换模板引擎，适合TPM开发
+    if(isset ($_SERVER['HTTP_CLIENT']) &&'PhoneClient'==$_SERVER['HTTP_CLIENT'])
+        return true;
+//如果via信息含有wap则一定是移动设备,部分服务商会屏蔽该信息
+    if (isset ($_SERVER['HTTP_VIA']))
+//找不到为flase,否则为true
+        return stristr($_SERVER['HTTP_VIA'], 'wap') ? true : false;
+//判断手机发送的客户端标志,兼容性有待提高
+    if (isset ($_SERVER['HTTP_USER_AGENT'])) {
+        $clientkeywords = array(
+            'nokia','sony','ericsson','mot','samsung','htc','sgh','lg','sharp','sie-','philips','panasonic','alcatel','lenovo','iphone','ipod','blackberry','meizu','android','netfront','symbian','ucweb','windowsce','palm','operamini','operamobi','openwave','nexusone','cldc','midp','wap','mobile'
+        );
+//从HTTP_USER_AGENT中查找手机浏览器的关键字
+        if (preg_match("/(" . implode('|', $clientkeywords) . ")/i", strtolower($_SERVER['HTTP_USER_AGENT']))) {
+            return true;
+        }
+    }
+//协议法，因为有可能不准确，放到最后判断
+    if (isset ($_SERVER['HTTP_ACCEPT'])) {
+// 如果只支持wml并且不支持html那一定是移动设备
+// 如果支持wml和html但是wml在html之前则是移动设备
+        if ((strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') !== false) && (strpos($_SERVER['HTTP_ACCEPT'], 'text/html') === false || (strpos($_SERVER['HTTP_ACCEPT'], 'vnd.wap.wml') < strpos($_SERVER['HTTP_ACCEPT'], 'text/html')))) {
+            return true;
+        }
+    }
+    return false;
+}
+
+function msubstr($str, $start=0, $length, $charset="utf-8", $suffix=true){
+    if(function_exists("mb_substr")){
+        if($suffix)
+            return mb_substr($str, $start, $length, $charset)."...";
+        else
+            return mb_substr($str, $start, $length, $charset);
+    }
+    elseif(function_exists('iconv_substr')) {
+        if($suffix)
+            return iconv_substr($str,$start,$length,$charset)."...";
+        else
+            return iconv_substr($str,$start,$length,$charset);
+    }
+    $re['utf-8']   = "/[x01-x7f]|[xc2-xdf][x80-xbf]|[xe0-xef]
+                  [x80-xbf]{2}|[xf0-xff][x80-xbf]{3}/";
+    $re['gb2312'] = "/[x01-x7f]|[xb0-xf7][xa0-xfe]/";
+    $re['gbk']    = "/[x01-x7f]|[x81-xfe][x40-xfe]/";
+    $re['big5']   = "/[x01-x7f]|[x81-xfe]([x40-x7e]|xa1-xfe])/";
+    preg_match_all($re[$charset], $str, $match);
+    $slice = join("",array_slice($match[0], $start, $length));
+    if($suffix) return $slice."…";
+    return $slice;
+}
+
+
+
+/**
+ * 获取图片集
+ * @param $str
+ * @return bool|mixed
+ */
+function get_img_array($str){
+    if(!$str)return false;
+    $str_arr=@explode(',',$str);
+    $map['id']=array('in',$str_arr);
+    return M('images')->where($map)->field('savepath')->select();
+}
+
+
+/**
+ * 获取默认图片
+ * @param $str
+ * @return bool|mixed
+ */
+function get_default_img($str){
+    if(!$str)return false;
+    $str_arr=explode(',',$str);
+    $map['id']=$str_arr[0];
+    return M('images')->where($map)->getField('savepath');
+}
+
+
+
 ?>

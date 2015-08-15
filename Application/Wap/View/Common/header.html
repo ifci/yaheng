@@ -16,28 +16,27 @@
     <meta name="x5-orientation" content="portrait">
     <meta name="x5-fullscreen" content="true">
     <meta name="x5-page-mode" content="app">
-    <meta name="apple-mobile-web-app-title" content="远瞻投权手机端">
-    <title>远瞻投权手机端</title>
-    <meta name="keywords" content="{$site.keyword},{$info['keywords']}">
-    <meta name="description" content="{$site.description},{$info['description']}">
-    <link type="text/css" href="__PUBLIC__/Min/?f=__CSS__/common.css|__CSS__/index.css" rel="stylesheet" />
-    <link href='http://www.youziku.com/webfont/NameCSS/29523' rel='stylesheet' type='text/css'/>
+    <meta name="apple-mobile-web-app-title" content="亚恒服饰手机端">
+    <title>亚恒服饰手机端</title>
+    <meta name="keywords" content="{$info['keywords'] ? $info['keywords'] : $site.keyword}">
+    <meta name="description" content="{$info['description'] ? $info['description'] : $site.description}">
+    <link type="text/css" href="__PUBLIC__/Min/?f=__CSS__/common.css|__CSS__/combo.css" rel="stylesheet" />
 </head>
-<body <if condition="CONTROLLER_NAME eq Index">class="index"</if>>
+<body>
     <!--头部-->
     <header>
-        <div class="nav_btn"><i class="iconfont">&#xe602;</i></div>
-        <div class="logo"><a href="{:C('WEB_ROOT').'wap'}"><img src="__IMG__/logo.png" alt=""/></a></div>
+        <img src="__IMG__/logo.png" alt="" class="logo"/>
+        <em>{$webtitle}</em>
+        <div class="nav_btn"></div>
     </header>
-    <div class="nav_list nav_on">
-        <ul>
-            <volist name="nav" id="vo">
-            <li>
-                <a href="<if condition='$vo.action eq null'>{$vo.link}<else />{:U($vo['action'])}</if>">
-                    <span>{$vo.nav_rename}</span>
-                    <em>{$vo.nav_name}</em>
-                </a>
-            </li>
-            </volist>
-        </ul>
+    <div class="nav">
+        <div class="nav-warp">
+            <h4>导航</h4>
+            <ul>
+                <volist name="nav" id="vo">
+                    <li><a href="__WAP__/{$vo['action']}">{$vo.nav_name}</a></li>
+                </volist>
+            </ul>
+            <div class="tel">联系热线：{$site.tel}</div>
+        </div>
     </div>

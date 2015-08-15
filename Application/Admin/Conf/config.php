@@ -7,7 +7,7 @@ return array(
         'News' => '新闻活动',
         'Product'=>'产品管理',
 //        'Course'=>'课程管理',
-//        'Team'=>'专家团队',
+        'Case'=>'案例展示',
         'Siteinfo'=>'网站功能',
         /*'Models'=>'模型管理',
         'SysData' => '数据管理',*/
@@ -61,9 +61,8 @@ return array(
         'Course' => array(
             'index' => '课程试听',
         ),
-        'Team' => array(
-            'index' => '投资团队',
-            'category' => '团队分类'
+        'Case' => array(
+            'index' => '案例展示',
         ),
         'SysData' => array(
             'index' => '数据库备份',

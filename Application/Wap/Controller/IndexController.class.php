@@ -5,18 +5,8 @@ use Think\Controller;
 class IndexController extends BaseController {
 
     public function index() {
-        $this->assign("ad_banner", $this->getAd());
-        $this -> ad_banner = M('Ad') -> field('id,ad_name,ad_link,ad_img') -> where('position="mobile"') -> order('sort DESC') -> select();
-        $this->assign('webtitle',L('T_HOME'));
-        $M = M("Video");
-        $video_list = $M -> field('id,title,url,image_id') -> where('status=1') -> order('id desc') -> limit(3) -> select();
-        $this->assign("video_list", $video_list);
-
-        $P = M("Product");
-        $pro_list = $P -> field('id,title,ename,url,image_id,description') -> where('status=1') -> order('id desc') -> limit(8) -> select();
-        $this->assign("pro_list", $pro_list);
         $N = M("Nav");
-        $action = $N -> field('id,nav_name,nav_rename,link,action') -> where('type="top"') -> order('sort desc') -> select();
+        $action = $N -> field('id,nav_name,link,action') -> where('type="top"') -> order('sort desc') -> select();
         $this -> assign('nav', $action);
         $this->display();
     }

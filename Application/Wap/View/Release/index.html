@@ -1,0 +1,14 @@
+<section>
+    <div class="release">
+        <ul class="clearfix">
+            <volist name="list" id="vo">
+            <li>
+                <a href="__WAP__/product_r/{$vo.id}">
+                    <img src="{:get_default_img($vo['image_id'])}" alt=""/>
+                    <span><em>{$vo.title}</em></span>
+                </a>
+            </li>
+            </volist>
+        </ul>
+    </div>
+</section>

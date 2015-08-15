@@ -25,6 +25,54 @@
 })(jQuery);
 $(function(){
 
+    var web = {
+        val : {
+            uname : $("#uname").val(),
+            tel : $("#tel").val(),
+            email : $("#email").val(),
+            address : $("#address").val(),
+            text : $("#text").val()
+        },
+        init : function(){
+            $('.submit').on('click', web.enroll);
+        },
+        enroll : function(){
+            var uname = $("#uname").val(),
+                tel = $("#tel").val(),
+                email = $("#email").val(),
+                address = $("#address").val(),
+                text = $("#text").val();
+            $.ajax({
+                url: "enroll",
+                type: "post",
+                data: {
+                    uname: uname,
+                    tel:  tel,
+                    email: email,
+                    address: address,
+                    text: text
+                },
+                success: function (data) {
+                    alert(data.info);
+                    data.tip == 1 ? location.reload() : false;
+                    /*switch(data.tip){
+                        case 0:
+                            username.parents('.txt').addClass('apply_err').siblings('.txt').removeClass('apply_err');
+                            break;
+                        case 1:
+                            mobile.parents('.txt').addClass('apply_err').siblings('.txt').removeClass('apply_err');
+                            break;
+                        case 2:
+                            $('.apply_c .txt').removeClass('apply_err');
+                    }
+                    $(".tips").html(data.info);*/
+                }
+            })
+
+        }
+    };
+    web.init();
+
     $(document).coffee({
         click: {
             '#menu': function(){
@@ -33,6 +81,14 @@ $(function(){
             },
             '.menu_list .close': function(){
                $('.menu_list').addClass('hide').removeClass('show');
+            },
+            '.dz_btn': function(){
+                $('.layer').show();
+                $('body').css('overflow','hidden');
+            },
+            '.layer-close': function(){
+                $('.layer').hide();
+                $('body').css('overflow','auto');
             }
         }
     });
@@ -48,13 +104,9 @@ $(function(){
         $("#tips").show();
     },1000);
 
-    var page = 1,total = $('#total').val();
-    total < 4 ? $('.add_more').remove() : false;
+    var page = 1,total = $('#total').val();     //当前页和总页数
+    total < 2 ? $('.add_more').remove() : false;
     $('.add_more').on('click', function(){
-
-    });
-
-    function ajaxPage(url){
         $.ajax({
             url: "news/ajax",
             type: "get",
@@ -78,7 +130,8 @@ $(function(){
                 }
             }
         })
-    }
+    });
+
 
 
 });

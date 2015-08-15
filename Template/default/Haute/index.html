@@ -88,26 +88,11 @@
             <a class="arrow-left" href="#"><</a>
             <a class="arrow-right" href="#">></a>
             <div class="swiper-wrapper">
-                <div class="swiper-slide" style="background-image:url(__IMG__/pic_36.jpg)">
-
+                <volist name="case" id="vo">
+                <div class="swiper-slide" style="background-image:url({:get_default_img($vo['image_id'])})" title="{$vo.title}">
                     <div class="reflection"></div>
                 </div>
-                <div class="swiper-slide" style="background-image:url(__IMG__/pic_36.jpg)">
-
-                    <div class="reflection"></div>
-                </div>
-                <div class="swiper-slide" style="background-image:url(__IMG__/pic_36.jpg)">
-
-                    <div class="reflection"></div>
-                </div>
-                <div class="swiper-slide" style="background-image:url(__IMG__/pic_36.jpg)">
-
-                    <div class="reflection"></div>
-                </div>
-                <div class="swiper-slide" style="background-image:url(__IMG__/pic_36.jpg)">
-
-                    <div class="reflection"></div>
-                </div>
+                </volist>
             </div>
         </div>
 
@@ -132,14 +117,7 @@
                 <div class="dz_btn"></div>
                 <div class="bgf"></div>
                 <ul class="haute_dz">
-                    <li><i>1</i>与顾客沟通，深入了解顾客的需求，喜爱的皮草服装风格，为客户提供款式选择，或者由客户提供款式的照片。通过与客户的深入沟通把客户的想法变得更加实际和具体。</li>
-                    <li><i>2</i>顾客原料选择及颜色：我们提供不同皮毛品质及颜色样供客户选择，所有原村料可以通过环保测试。我们有各种国产，进口的狐狸毛，貉子毛，羊毛皮，水貂，光面羊皮，毛面有不同的颜色和印花风格，皮面风格有光面革，绒面革，清水革，水染蜡感革，植鞣革等 。</li>
-                    <li><i>3</i>通过与客户的沟通，为客户出设计图稿，并就细节与客户沟通与确认。如果客户提供的款式图或设计，我们会做出排板，绘制出一个图样供客户确认。</li>
-                    <li><i>4</i>尺寸确认：我们会提供一组样衣，让客户试身，可以根据客户要求调整尺寸。</li>
-                    <li><i>5</i>客户试样后有不合适的地方，可以就尺寸方面进行调整修改。</li>
-                    <li><i>6</i>中途样品制作：如果客户有其他要求，与设计师及时沟通，在半成品期间进行修改。</li>
-                    <li><i>7</i>皮草服装交付时，对于皮草服装的保养与洗涤，对客户进行说明，为售后服务打好基础。</li>
-                    <li><i>8</i>售后服务：顾客可以前来领取，也可上门送货服务。对皮草后期保养给客户合理建议。</li>
+                    {$dz[0].content}
                 </ul>
             </div>
         </div>
@@ -172,3 +150,38 @@
         mySwiper.swipeNext()
     })
 </script>
+
+<!--定制留言框-->
+<div class="layer">
+    <div class="layer_t">
+        <small>ADVANCED CUSTOMIZATION</small>
+        <h4>高级定制</h4>
+        <span>温馨提示：为确保快速与您联系，请您填写真实的姓名和联系方式。以下信息我们均保密。</span>
+        <i class="layer-close"></i>
+    </div>
+    <div class="layer_c clearfix">
+        <div class="layer_cc clearfix">
+            <form action="" method="post" class="form" onsubmit="return false">
+                <div class="form-group">
+                    <label for="uname">姓名</label><input type="text" id="uname" name="uname" class="form-control"/>
+                    <label for="tel">电话</label><input type="text" id="tel" name="tel" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">邮箱</label><input type="text" id="email" name="email" class="form-control"/>
+                    <label for="address">地址</label><input type="text" id="address" name="address" class="form-control"/>
+                </div>
+
+                <div class="form-group">
+                    <label for="text" class="vt">备注</label><textarea name="text" id="text"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <input type="submit" value="提交" class="submit"/>
+                    <input type="reset" value="重置" class="reset"/>
+                </div>
+            </form>
+            <div class="layer_cr"></div>
+        </div>
+    </div>
+</div>
