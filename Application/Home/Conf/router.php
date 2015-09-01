@@ -16,6 +16,10 @@ return array(
         'product_r/:id\d'    => 'product/read',
         'product/'    => 'product/index',
         'product/:cid\d'    => 'product/index',
+//        'product/:sid\d'    => 'product/index',
+        'season'    => 'product/season',
+
+        'leather'    => 'release/leather',
 
          /*单页*/
         'page/:name'    => 'page/index',

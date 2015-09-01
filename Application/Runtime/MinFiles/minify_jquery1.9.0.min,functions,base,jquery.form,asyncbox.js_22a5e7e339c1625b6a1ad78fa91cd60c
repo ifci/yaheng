@@ -5,7 +5,7 @@
 ;function getBodySize(get){var bodySize=[];bodySize['w']=($(document.body).width()>$(window).width())?$(document.body).width():$(window).width();bodySize['h']=($(document.body).height()>$(window).height())?$(document.body).height():$(window).height();return get?bodySize[get]:bodySize;}
 function commonAjaxSubmit(url,formObj){if(!formObj||formObj==''){var formObj="form";}
 if(!url||url==''){var url=document.URL;}
-$(formObj).ajaxSubmit({url:url,type:"POST",success:function(data,st){if(data.status==1){popup.success(data.info);setTimeout(function(){popup.close("asyncbox_success");},2000);}else{popup.error(data.info);setTimeout(function(){popup.close("asyncbox_error");},2000);}
+$(formObj).ajaxSubmit({url:url,type:"POST",success:function(data,st){console.log(data);if(data.status==1){popup.success(data.info);setTimeout(function(){popup.close("asyncbox_success");},2000);}else{popup.error(data.info);setTimeout(function(){popup.close("asyncbox_error");},2000);}
 if(data.url&&data.url!=''){setTimeout(function(){top.window.location.href=data.url;},2000);}
 if(data.url==''){setTimeout(function(){top.window.location.reload();},1000);}}});return false;}
 function isEmail(value){var Reg=/^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;return Reg.test(value);}

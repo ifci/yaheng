@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*
- * Copyright (c) 2015 JKD TEAM (9koudai.net)
+ * Copyright (c) 2015 JKD TEAM (shjkd.cn)
  * @Author: fcdcyy@sina.cn
  *
  * @DateTime: 2015-03-23 09:09:49
@@ -11,7 +11,11 @@
 body {
   font-family: Microsoft yahei; }
 
-.paging em, .paging a, .paging span, .bread i {
+.menu i, .sharebar i {
+  background-image: url(../images/icon.png);
+  background-repeat: no-repeat; }
+
+.menu i, .sharebar i, .paging em, .paging a, .paging span, .bread i {
   display: inline-block;
   *display: inline;
   zoom: 1;
@@ -25,6 +29,18 @@ body {
     height: 0;
     clear: both;
     visibility: hidden; }
+
+.menu, .menu_list, .menu_list li, .sharebar a {
+  float: left; }
+
+.sharebar {
+  float: right; }
+
+.menu_list, .sharebar, .sharebar a {
+  position: relative; }
+
+.menu_list .close, .sharebar_con {
+  position: absolute; }
 
 html, body, form, h1, h2, h3, h4, h5, h6, div, dl, dt, dd, ul, ol, li, p, em, address, a, input, textarea, span, strong, img {
   margin: 0px;
@@ -47,7 +63,6 @@ img {
 a {
   color: #666;
   text-decoration: none;
-  blr: expression(this.onFocus=this.blur());
   outline: none;
   -webkit-transition: color 0.8s ease;
   -moz-transition: color 0.8s ease;
@@ -129,16 +144,132 @@ section, article, aside, header, footer, nav, dialog, figure {
 .vt {
   vertical-align: top; }
 
-@font-face {
-  font-family: 'BEBAS';
-  src: url("../fonts/BEBAS.eot");
-  src: url("../fonts/BEBAS.eot?#font-spider") format("embedded-opentype"), url("../fonts/BEBAS.woff") format("woff"), url("../fonts/BEBAS.ttf") format("truetype"), url("../fonts/BEBAS.svg") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+.header {
+  width: 100%; }
+
+.menu {
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: 38px;
+  border: 2px solid #3c3c3c;
+  -webkit-transition: 1s border-color ease;
+  -moz-transition: 1s border-color ease;
+  -ms-transition: 1s border-color ease;
+  -o-transition: 1s border-color ease;
+  transition: 1s border-color ease;
+  /*&:hover{
+    border: 2px solid rgba(60,60,60,1);
+  }*/ }
+  .menu i {
+    width: 28px;
+    height: 18px;
+    background-position: 0 -256px;
+    margin-top: 12px; }
+
+.menu_list {
+  border: 2px solid #3f3f3f;
+  height: 44px;
+  line-height: 44px;
+  position: relative;
+  margin: 38px 0 0 10px;
+  font-size: 14px;
+  -webkit-transition: 0.6s all ease;
+  -moz-transition: 0.6s all ease;
+  -ms-transition: 0.6s all ease;
+  -o-transition: 0.6s all ease;
+  transition: 0.6s all ease; }
+  .menu_list ul {
+    overflow: hidden;
+    padding: 0 12px; }
+  .menu_list a {
+    color: #6B6B6B; }
+    .menu_list a:hover {
+      -webkit-transition-duration: 0s;
+      transition-duration: 0s;
+      color: #666;
+      font-weight: bold;
+      text-shadow: 0 0 12px #fff; }
+  .menu_list li {
+    padding: 0 12px; }
+    .menu_list li.on a {
+      font-weight: bold;
+      color: #d2d6d5;
+      text-shadow: 1px 1px 0 #000; }
+  .menu_list .close {
+    background: #3f3f3f;
+    text-align: center;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    color: #fff;
+    right: -16px;
+    top: -2px;
+    cursor: pointer; }
+  .menu_list.show {
+    transform-origin: 50% -10% 0px;
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+    opacity: 1; }
+  .menu_list.hide {
+    transform-origin: 0 0 0;
+    transform: matrix3d(1, 0, 0, 0, 0, 0, -1, 0, 0, 1, 0, 0, 0, 0, 0, 1);
+    opacity: 0; }
+
+.header_wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  z-index: 9; }
+
 .content {
   position: relative;
   min-height: 100%;
   _height: 100%; }
+
+.sharebar {
+  margin-top: 38px;
+  text-align: center; }
+  .sharebar a {
+    width: 44px;
+    height: 44px;
+    border: 2px solid #3f3f3f; }
+    .sharebar a:first-child, .sharebar a:nth-child(2) {
+      border-right: none; }
+    .sharebar a:hover {
+      opacity: .6; }
+      .sharebar a:hover .sharebar_con {
+        display: block; }
+  .sharebar i {
+    width: 30px;
+    height: 30px;
+    margin-top: 7px; }
+  .sharebar .s_tel i {
+    background-position: 0 -355px; }
+  .sharebar .s_wx i {
+    background-position: -2px -395px; }
+  .sharebar .s_wb i {
+    background-position: 0 -431px; }
+
+.sharebar_con {
+  display: none;
+  top: 48px;
+  left: 0;
+  background: #C5C5C5;
+  width: 100%;
+  color: #fff;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: left; }
+  .sharebar_con img {
+    width: 100%; }
+  .sharebar_con span {
+    display: none; }
+  .sharebar_con b {
+    display: block;
+    font-size: 17px;
+    font-weight: normal;
+    line-height: 2; }
 
 /*分页样式*/
 .paging {

@@ -14,14 +14,34 @@ class NewsController extends BaseController {
     public function index(){
         $N = M("News");
         $C = M("Category");
-        $cid=I('get.id');
+        $cid=I('post.id');
         $map['pid'] = 1;
         $map['type'] = 'n';
         $ct = $C -> field('cid,name') -> where($map) -> order('cid DESC') -> select();
         $this -> assign('ct', $ct);
-        $list = $N -> field('id,cid,title,summary,published,click,image_id') -> where('status=1') -> order('id DESC') -> select();
+        $list = $N -> field('id,cid,title,summary,published,click,image_id') -> where('status=1') -> limit(C('LISTNUM.newslist')) -> order('id DESC') -> select();
         $this->assign("list", $list);
+        $count = $N -> where('status=1') -> count();
+        $this->assign("count", $count);
+        $this->assign('total', ceil($N -> where('status=1 and cid =1') -> count()/C('LISTNUM.newslist')));
         $this->display();
+    }
+
+    public function ajax(){
+        $page = I('get.page');
+        $num = C('LISTNUM.newslist');
+        $news = M('News');
+        $map['cid'] = 1;
+        $map['status'] = 1;
+        $arr = $news -> where($map) -> limit($page*$num, $num) ->  order('id desc') -> select();
+        $end = floor($news -> where($map) -> count()/$num);
+//        echo $page == $end ? $arr[0]['clear'] = 1 : false;
+        foreach($arr as $key => $val){
+            $arr[$key]['src'] = get_default_img($arr[$key]['image_id']);
+            $arr[$key]['published'] = date('Y/m/d', $arr[$key]['published']);
+        }
+        $this -> ajaxReturn($arr);
+
     }
     /**
      * 详情页

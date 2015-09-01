@@ -56,7 +56,8 @@ return array(
             'create_tag'=>'模版标签',
             'file_index'=>'文件管理',
             'link_index'=>'友情链接',
-            'message'=>'留言信息'
+            'message'=>'留言信息',
+            'gif'=>'首页闪图'
         ),
         'Course' => array(
             'index' => '课程试听',

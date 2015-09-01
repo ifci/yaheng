@@ -62,7 +62,7 @@
             <div class="swiper-container">
                 <div class="swiper-wrapper">
                     <volist name="season" id="vo" key="k">
-                        <div class="swiper-slide{$k == 1 ? ' on' : false}" data-sid="{$vo.cid}">{$vo.name}</div>
+                        <div class="swiper-slide <if condition="$sid eq $vo['cid']"> on</if>" data-sid="{$vo.cid}"><a href="{:U('product/catelist',array('cid'=>$_GET['cid'],'sid'=>$vo['cid']))}">{$vo.name}</a></div>
                     </volist>
                 </div>
             </div>
@@ -72,9 +72,10 @@
         </div>
 
         <div class="plist">
+            <input type="hidden" id="total" value="{$total}"/>
             <ul class="clearfix">
                 <volist name="list" id="vo">
-                <li>
+                <li data-id="{$vo.id}">
                     <a href="{:U('product_r/'.$vo['id'])}">
                         <div class="box">
                             <img src="{:get_default_img($vo['image_id'])}" alt=""/>
@@ -84,6 +85,12 @@
                 </li>
                 </volist>
             </ul>
+            <!--{$count > 8 ? '<div class="paging"><a href="javascript:" class="add_more">加载更多</a></div>' : false}-->
+            <if condition="$list eq null">
+                <div class="empty">暂无相关商品信息！</div>
+            <elseif condition="$count gt 8" />
+                <div class="paging"><a href="javascript:" class="add_more">加载更多</a></div>
+            </if>
         </div>
     </div>
 </section>
@@ -98,4 +105,6 @@
         prevButton: '.swiper-button-prev',
         slidesPerView: 4
     });
+
+
 </script>

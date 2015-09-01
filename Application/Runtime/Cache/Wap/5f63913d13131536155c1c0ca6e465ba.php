@@ -27,7 +27,19 @@
     <header>
         <img src="/yaheng/Public/Wap/images/logo.png" alt="" class="logo"/>
         <em><?php echo ($webtitle); ?></em>
-        <div class="nav_btn"></div>
+        <div class="nav_btn">
+            <div id="menu-toggle">
+                <div id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="cross">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
     </header>
     <div class="nav">
         <div class="nav-warp">
@@ -101,7 +113,7 @@
             <!-- Swiper -->
             <div class="swiper-container">
                 <div class="swiper-wrapper">
-                    <?php if(is_array($season)): $k = 0; $__LIST__ = $season;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?><div class="swiper-slide<?php echo ($k == 1 ? ' on' : false); ?>" data-sid="<?php echo ($vo["cid"]); ?>"><?php echo ($vo["name"]); ?></div><?php endforeach; endif; else: echo "" ;endif; ?>
+                    <?php if(is_array($season)): $k = 0; $__LIST__ = $season;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($k % 2 );++$k;?><div class="swiper-slide <?php if($sid == $vo['cid']): ?>on<?php endif; ?>" data-sid="<?php echo ($vo["cid"]); ?>"><a href="<?php echo U('product/catelist',array('cid'=>$_GET['cid'],'sid'=>$vo['cid']));?>"><?php echo ($vo["name"]); ?></a></div><?php endforeach; endif; else: echo "" ;endif; ?>
                 </div>
             </div>
             <!-- Add Arrows -->
@@ -110,8 +122,9 @@
         </div>
 
         <div class="plist">
+            <input type="hidden" id="total" value="<?php echo ($total); ?>"/>
             <ul class="clearfix">
-                <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li>
+                <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><li data-id="<?php echo ($vo["id"]); ?>">
                     <a href="<?php echo U('product_r/'.$vo['id']);?>">
                         <div class="box">
                             <img src="<?php echo get_default_img($vo['image_id']);?>" alt=""/>
@@ -120,6 +133,10 @@
                     </a>
                 </li><?php endforeach; endif; else: echo "" ;endif; ?>
             </ul>
+            <!--<?php echo ($count > 8 ? '<div class="paging"><a href="javascript:" class="add_more">加载更多</a></div>' : false); ?>-->
+            <?php if($list == null): ?><div class="empty">暂无相关商品信息！</div>
+            <?php elseif($count > 8): ?>
+                <div class="paging"><a href="javascript:" class="add_more">加载更多</a></div><?php endif; ?>
         </div>
     </div>
 </section>
@@ -134,6 +151,8 @@
         prevButton: '.swiper-button-prev',
         slidesPerView: 4
     });
+
+
 </script>
     <!--底部-->
     <footer>

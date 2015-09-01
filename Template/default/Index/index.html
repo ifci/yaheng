@@ -28,7 +28,7 @@
     </div>
 </div>
 <div class="header">
-    <div class="center pr">
+    <div class="pr clearfix header_wrap">
         <div id="menu" class="menu"><i></i></div>
         <div class="menu_list">
             <ul>
@@ -43,9 +43,10 @@
             <div class="close">×</div>
         </div>
         <div class="sharebar">
-            <a href="#" title="" class="s_tel"><i></i></a>
-            <a href="#" title="" class="s_wx"><i></i></a>
-            <a href="#" title="" class="s_wb"><i></i></a>
+            <a href="javascript:" title="咨询热线" class="s_tel"><i></i></a>
+            <a href="javascript:" title="亚恒官方微信" class="s_wx"><i></i></a>
+            <a href="{$site.weibo}" title="亚恒官方微博" class="s_wb" target="_blank"><i></i></a>
+            <div class="sharebar_con"><span>咨询热线：<b>{$site.tel}</b></span><span><img src="__IMG__/qrcode.jpg" alt=""/></span></div>
         </div>
     </div>
 </div>
@@ -259,8 +260,10 @@
         </div>
         <div class="swiper-slide" style="background-image: url(__IMG__/Slide8.jpg)">
             <div class="center">
-                <div class="slide-18">
-                    <img src="__IMG__/pic_11.png" alt="Bety Magi"/>
+                <div class="slide-18 dynamic">
+                    <volist name="gif" id="vo">
+                    <img src="{$vo.savepath}"/>
+                    </volist>
                 </div>
             </div>
         </div>
@@ -271,10 +274,10 @@
                         <volist name="news_list" id="vo">
                         <li>
                             <div class="box">
-                                <a href="{:U('/news_r/'.$vo['id'])}" title="">
-                                    <div class="day">20</div>
-                                    <div class="date">2015.05</div>
-                                    <div class="tit">Bety Magi蓓特蔓皮草品牌创始人谈不一样的全网营销</div>
+                                <a href="{:U('/news_r/'.$vo['id'])}" title="{$vo.title}">
+                                    <div class="day">{$vo.published|date='d',###}</div>
+                                    <div class="date">{$vo.published|date='Y.m',###}</div>
+                                    <div class="tit">{$vo.title}</div>
                                     <div class="details">Details+</div>
                                 </a>
                             </div>

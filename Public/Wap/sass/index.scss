@@ -1,6 +1,9 @@
 @import "common.scss";
 
 /*首页*/
+.swiper-slide{
+  overflow: hidden;
+}
 .swiper-slide:nth-child(1){
   background: #292929;
 }

@@ -92,11 +92,10 @@ a {
   -moz-osx-font-smoothing: grayscale; }
 
 .nav_btn {
-  background: url(../images/nav.png) no-repeat;
   width: 1.4em;
   height: 1.4em;
-  -webkit-background-size: 100% auto;
-  background-size: 100% auto;
+  /*  -webkit-background-size: 100% auto;
+    background-size: 100% auto;*/
   right: 1em;
   top: .8em;
   z-index: 10; }
@@ -153,6 +152,88 @@ a {
   -webkit-transform: translateX(0);
   transform: translateX(0); }
 
+#menu-toggle {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent; }
+
+#menu-toggle span {
+  display: block;
+  border-radius: 2px;
+  -webkit-transition: 0.25s all ease-in-out;
+  -moz-transition: 0.25s all ease-in-out;
+  -ms-transition: 0.25s all ease-in-out;
+  -o-transition: 0.25s all ease-in-out;
+  transition: 0.25s all ease-in-out; }
+
+#menu-toggle #hamburger {
+  position: absolute;
+  height: 100%;
+  width: 100%; }
+
+#menu-toggle #hamburger span {
+  width: 100%;
+  height: 3px;
+  position: relative;
+  margin: .2em 0;
+  background: #fff; }
+
+#menu-toggle #hamburger span:nth-child(1) {
+  transition-delay: .5s; }
+
+#menu-toggle #hamburger span:nth-child(2) {
+  transition-delay: .625s; }
+
+#menu-toggle #hamburger span:nth-child(3) {
+  transition-delay: .75s; }
+
+#menu-toggle #cross {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: rotate(45deg); }
+
+#menu-toggle #cross span {
+  background: #566973; }
+
+#menu-toggle #cross span:nth-child(1) {
+  height: 0;
+  width: 4px;
+  position: absolute;
+  top: 0;
+  left: .6em;
+  transition-delay: 0s; }
+
+#menu-toggle #cross span:nth-child(2) {
+  width: 0;
+  height: 4px;
+  position: absolute;
+  left: 0;
+  top: .6em;
+  transition-delay: .25s; }
+
+#menu-toggle.open #hamburger span {
+  width: 0; }
+
+#menu-toggle.open #hamburger span:nth-child(1) {
+  transition-delay: 0s; }
+
+#menu-toggle.open #hamburger span:nth-child(2) {
+  transition-delay: .125s; }
+
+#menu-toggle.open #hamburger span:nth-child(3) {
+  transition-delay: .25s; }
+
+#menu-toggle.open #cross span:nth-child(1) {
+  height: 100%;
+  transition-delay: .625s; }
+
+#menu-toggle.open #cross span:nth-child(2) {
+  width: 100%;
+  transition-delay: .375s; }
+
 @media screen and (min-width: 360px) {
   body, input, select {
     font-size: 15.75px; } }
@@ -181,6 +262,9 @@ input, button {
   position: absolute; }
 
 /*首页*/
+.swiper-slide {
+  overflow: hidden; }
+
 .swiper-slide:nth-child(1) {
   background: #292929; }
 

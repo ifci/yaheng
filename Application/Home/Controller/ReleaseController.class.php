@@ -16,7 +16,17 @@ class ReleaseController extends BaseController {
         $map['status']=1;
         $map['lang']=LANG_SET;
         $map['is_recommend']=1;
-        $list = $P -> where($map) -> order('id desc') -> limit(14) -> select();
+
+
+        $count = $P->table($P->getTableName().' p')
+//            ->join($C->getTableName().' c on c.cid=p.cid')
+            ->field('p.id')
+            ->where($map)->count();
+        $page = new \Think\Page($count,14);
+        $showPage = $page->show();
+        $this->assign("page", $showPage);
+
+        $list = $P -> where($map) -> order('id desc') -> limit("$page->firstRow, $page->listRows") -> select();
         $this->assign("list", $list);
 
         $this->assign('total', ceil($P -> where('status=1 and is_recommend =1') -> count()/C('LISTNUM.prolist')));
@@ -25,6 +35,12 @@ class ReleaseController extends BaseController {
         $this->assign("ad_info", $this->getAd('bottom'));
         $this->assign('webtitle',L('T_RELEASE'));
         $this->display();
+    }
+
+    public function leather(){
+
+        $this->assign('webtitle',L('T_RELEASE'));
+        $this -> display();
     }
 
 }

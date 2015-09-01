@@ -27,7 +27,7 @@
     </div>
 </div>
 <div class="header">
-    <div class="center pr">
+    <div class="pr clearfix header_wrap">
         <div id="menu" class="menu"><i></i></div>
         <div class="menu_list">
             <ul>
@@ -42,13 +42,14 @@
             <div class="close">×</div>
         </div>
         <div class="sharebar">
-            <a href="#" title="" class="s_tel"><i></i></a>
-            <a href="#" title="" class="s_wx"><i></i></a>
-            <a href="#" title="" class="s_wb"><i></i></a>
+            <a href="javascript:" title="咨询热线" class="s_tel"><i></i></a>
+            <a href="javascript:" title="亚恒官方微信" class="s_wx"><i></i></a>
+            <a href="{$site.weibo}" title="亚恒官方微博" class="s_wb" target="_blank" rel="nofollow"><i></i></a>
+            <div class="sharebar_con"><span>咨询热线：<b>{$site.tel}</b></span><span><img src="__UPLOAD__/picture/{$wxqr[0].ad_img}" alt="{$wxqr[0].ad_name}"/></span></div>
         </div>
     </div>
 </div>
 <div class="bread">
-    <span>当前位置：</span><a href="__ROOT__/" title="首页">首页</a><i>></i><a href="{:U('/'.$b_url)}" title="{$webtitle}">{$webtitle}</a><if condition="$details eq 1"><i>></i><a href="__SELF__" title="{$info['title']}">{$info['title']}</a>
+    <span>当前位置：</span><a href="__ROOT__/" title="首页">首页</a><i>></i><a href="{:U('/'.strtolower(CONTROLLER_NAME))}" title="{$bread}">{$bread}</a><if condition="$details eq 1"><i>></i><a href="__SELF__" title="{$info['title']}">{$info['title']}</a>
 </if>
 </div>

@@ -24,7 +24,12 @@ class BaseController extends Controller{
         //面包屑导航
 //        $action = M('Nav') -> where('nav_name='.$webtitle) -> getField('action');
         $action = strtolower(CONTROLLER_NAME);
-        $this -> assign('b_url', $action);
+        $bread = M('Nav') -> where("action='".$action."'") -> getField('nav_name');
+        $this -> assign('action', $action);
+        $this -> assign('bread', $bread);
+
+        /*微信二维码*/
+        $this->assign("wxqr", $this->getAd('wxqr'));
     }
 
     public function _empty($name){

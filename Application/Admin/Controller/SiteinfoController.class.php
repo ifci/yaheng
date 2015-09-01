@@ -621,4 +621,37 @@ class SiteinfoController extends CommonController {
     }
 
 
+    public function gif(){
+        $M_image = M("images");
+        $M = M('gif');
+        if(IS_POST){
+            $data = $_POST['info'];
+            $image=I('post.image_1');
+            if($image){
+                if(is_array($image)){
+                    $image_id=array();
+                    foreach($image as $k=>$v){
+                        $img_data['savepath']=$v;
+                        $img_data['savename']=end(explode('/',$v));
+                        $img_data['create_time']=time();
+                        $img_data['catname']='gif';
+                        if($v)
+                            $image_id[$k]=$M_image->add($img_data);
+                    }
+                    $data['image_id']=implode(',',$image_id);
+                }
+            }
+            if($M -> where('id=1') -> save($data)){
+                echo json_encode(array("status" => 1, "info" => "修改成功",'url'=>U('Siteinfo/gif')));
+            }
+        }else{
+            $img_id = $M -> where('id=1') -> getField('image_id');
+            $img_info = get_img_array($img_id);
+            $this -> assign('img_info', $img_info);
+            $this -> display();
+        }
+    }
+
+
+
 }

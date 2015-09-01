@@ -36,12 +36,14 @@
         </div>
         <div class="news_r">
             <ul>
+                <news  limit="5" order="click DESC" >
                 <li>
-                    <div class="box"><a href="/yaheng/news_r/49.html" title="蓓特蔓（Bety Magi）皮草品牌經營發展趨勢5"><img src="/yaheng/Uploads/image/news/20150731/20150731172320_62965.jpg" alt="蓓特蔓（Bety Magi）皮草品牌經營發展趨勢5"/></a></div>
-                    <div class="tit"><a href="/yaheng/news_r/49.html" title="蓓特蔓（Bety Magi）皮草品牌經營發展趨勢5">蓓特蔓（Bety Magi）皮草品牌經營發展趨勢5</a></div>
-                    <div class="txt"><a href="/yaheng/news_r/49.html" title="上海蘊盛國際貿易有限公司的產品一直主要是出口到日本和歐美國家，並為一些國際品牌做貼牌生產，奠定了保障生產品質的基礎，隨著國內場市場的發展，推出了自有品牌蓓特蔓(Bety Magi)皮草，現在的消費者越來越講求個性化，越來越注重個人形象的展現，特別是對有一定經濟基礎和一定消費品位的白領們來說，他們更是喜歡的是有個性，時尚而又有一定知名度的品牌服裝。因此，一定時期內消費市場將會向中高端的品…">上海蘊盛國際貿易有限公司的產品一直主要是出口到日本和歐美國家，並為一些國際品牌做貼牌生產，奠定了保障生產品質的基礎，隨著國內場市場的發展，推出了自有品牌蓓特蔓(Bety Magi)皮草，現在的消費者越來越講求個性化，越來越注重個人形象的展現，特別是對有一定經濟基礎和一定消費品位的白領們來說，他們更是喜歡的是有個性，時尚而又有一定知名度的品牌服裝。因此，一定時期內消費市場將會向中高端的品…</a></div>
+                    <div class="box"><a href="{:U('news_r/'.$new['id'])}" title="{$new['title']}"><img src="{:get_default_img($new['image_id'])}" alt="{$new['title']}"/></a></div>
+                    <div class="tit"><a href="{:U('news_r/'.$new['id'])}" title="{$new['title']}">{$new['title']}</a></div>
+                    <div class="txt"><a href="{:U('news_r/'.$new['id'])}" title="{$new['summary']}">{$new['summary']}</a></div>
                     <div class="time">2015/07/31</div>
                 </li>
+                </news>
             </ul>
         </div>
     </div>

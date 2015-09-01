@@ -13,5 +13,9 @@
                 </li>
             </volist>
         </ul>
+        <input type="hidden" id="total" value="{$total}"/>
+        <!--分页-->
+        {$count > 4 ? '<div class="paging"><a href="javascript:" class="add_more">加载更多</a></div>' : false}
+
     </div>
 </section>

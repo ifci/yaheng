@@ -18,8 +18,8 @@
     <meta name="x5-page-mode" content="app">
     <meta name="apple-mobile-web-app-title" content="亚恒服饰手机端">
     <title>亚恒服饰手机端</title>
-    <meta name="keywords" content="<?php echo ($site["keyword"]); ?>,<?php echo ($info['keywords']); ?>">
-    <meta name="description" content="<?php echo ($site["description"]); ?>,<?php echo ($info['description']); ?>">
+    <meta name="keywords" content="<?php echo ($info['keywords'] ? $info['keywords'] : $site["keyword"]); ?>">
+    <meta name="description" content="<?php echo ($info['description'] ? $info['description'] : $site["description"]); ?>">
     <link type="text/css" href="/yaheng/Public/Min/?f=/yaheng/Public/Wap/css/common.css|/yaheng/Public/Wap/css/combo.css" rel="stylesheet" />
 </head>
 <body>
@@ -27,7 +27,19 @@
     <header>
         <img src="/yaheng/Public/Wap/images/logo.png" alt="" class="logo"/>
         <em><?php echo ($webtitle); ?></em>
-        <div class="nav_btn"></div>
+        <div class="nav_btn">
+            <div id="menu-toggle">
+                <div id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="cross">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
     </header>
     <div class="nav">
         <div class="nav-warp">
@@ -51,6 +63,10 @@
                     </a>
                 </li><?php endforeach; endif; else: echo "" ;endif; ?>
         </ul>
+        <input type="hidden" id="total" value="<?php echo ($total); ?>"/>
+        <!--分页-->
+        <?php echo ($count > 4 ? '<div class="paging"><a href="javascript:" class="add_more">加载更多</a></div>' : false); ?>
+
     </div>
 </section>
     <!--底部-->

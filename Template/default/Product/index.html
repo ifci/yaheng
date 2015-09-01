@@ -16,11 +16,11 @@
             <div class="side">
                 <div class="slide">
                     <volist name="cate_list" id="vo">
-                        <div class="slide_t"><a href="javascript:" title="{$vo.name}" data-cid="{$vo.id}">{$vo.name}</a></div>
+                        <div class="slide_t <if condition="$_GET['cid'] eq $vo['cid']"> on</if>"><a href="{:U('product/index',array('cid'=>$vo['cid'],'sid'=>$_GET['sid']))}" title="{$vo.name}" data-cid="{$vo.id}">{$vo.name}</a></div>
                         <div class="slide_c">
                             <ul>
                                 <volist name="vo[voo]" id="sub">
-                                    <li><a href="javascript:" title="{$sub.name}" data-cid="{$vo.id}"><i></i>{$sub.name}</a></li>
+                                    <li <if condition="$_GET['cid'] eq $sub['cid']"> class="on"</if>><a href="{:U('product/index',array('cid'=>$sub['cid'],'sid'=>$_GET['sid']))}" title="{$sub.name}" data-cid="{$vo.id}"><i></i>{$sub.name}</a></li>
                                 </volist>
                             </ul>
                         </div>
@@ -41,9 +41,11 @@
                     <div class="pshow_bt">
                         <div class="bd">
                             <volist name="season" id="vo" key="k">
-                            <a href="javascript:" <if condition="$k eq 1"> class="on"</if> data-season="{$vo.name}">{$vo.name}</a>
+                            <a href="{:U('product/index',array('cid'=>$_GET['cid'],'sid'=>$vo['cid']))}" <if condition="$sid eq $vo['cid']"> class="on"</if> data-sid="{$vo.cid}">{$vo.name}</a>
                             </volist>
                         </div>
+                        <input type="hidden" id="sea_val_cid" value="{$_GET['cid']}"/>
+                        <input type="hidden" id="total" value="{$total}"/>
                         <div class="hd">
                             <a href="javascript:"><</a>
                             <a href="javascript:">></a>
@@ -54,6 +56,9 @@
                             <volist name="list" id="vo">
                             <li><a href="{:U('product_r/'.$vo['id'])}" title="{$vo.title}"><img src="{:get_default_img($vo['image_id'])}" alt="{$vo.title}"/><em></em><span>{$vo.title}</span></a></li>
                             </volist>
+                            <if condition="$list eq null">
+                                <div class="empty">暂无相关产品信息！</div>
+                            </if>
                         </ul>
                         {$page}
                     </div>
@@ -65,5 +70,3 @@
 
 <script src="__JS__/swiper.min.js"></script>
 <script src="__JS__/idangerous.swiper.scrollbar.js"></script>
-<script>
-</script>

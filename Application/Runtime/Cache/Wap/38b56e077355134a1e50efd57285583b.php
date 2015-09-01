@@ -27,7 +27,19 @@
     <header>
         <img src="/yaheng/Public/Wap/images/logo.png" alt="" class="logo"/>
         <em><?php echo ($webtitle); ?></em>
-        <div class="nav_btn"></div>
+        <div class="nav_btn">
+            <div id="menu-toggle">
+                <div id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="cross">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
     </header>
     <div class="nav">
         <div class="nav-warp">

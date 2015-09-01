@@ -18,8 +18,8 @@
     <meta name="x5-page-mode" content="app">
     <meta name="apple-mobile-web-app-title" content="亚恒服饰手机端">
     <title>亚恒服饰手机端</title>
-    <meta name="keywords" content="<?php echo ($site["keyword"]); ?>,<?php echo ($info['keywords']); ?>">
-    <meta name="description" content="<?php echo ($site["description"]); ?>,<?php echo ($info['description']); ?>">
+    <meta name="keywords" content="<?php echo ($info['keywords'] ? $info['keywords'] : $site["keyword"]); ?>">
+    <meta name="description" content="<?php echo ($info['description'] ? $info['description'] : $site["description"]); ?>">
     <link type="text/css" href="/yaheng/Public/Min/?f=/yaheng/Public/Wap/css/common.css|/yaheng/Public/Wap/css/combo.css" rel="stylesheet" />
 </head>
 <body>
@@ -27,7 +27,19 @@
     <header>
         <img src="/yaheng/Public/Wap/images/logo.png" alt="" class="logo"/>
         <em><?php echo ($webtitle); ?></em>
-        <div class="nav_btn"></div>
+        <div class="nav_btn">
+            <div id="menu-toggle">
+                <div id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="cross">
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
     </header>
     <div class="nav">
         <div class="nav-warp">
@@ -40,27 +52,28 @@
     </div>
 <section>
     <div class="tips">温馨提示：为确保快速与您联系，请您填写真实的姓名和联系方式。以下信息我们均保密</div>
+    <small class="tips2">"*"为必填项</small>
     <div class="enroll">
-        <form action="" class="form">
+        <form action="enroll" class="form" method="post" onsubmit="return false">
             <div class="form-group">
-                <span>姓&nbsp;&nbsp;名</span>
-                <input type="text" class="form-control"/>
+                <span>姓&nbsp;&nbsp;名</span><em>*</em>
+                <input type="text" class="form-control" id="uname" name="uname"/>
             </div>
             <div class="form-group">
-                <span>电&nbsp;&nbsp;话</span>
-                <input type="text" class="form-control"/>
+                <span>电&nbsp;&nbsp;话</span><em>*</em>
+                <input type="text" class="form-control" id="tel" name="tel"/>
             </div>
             <div class="form-group">
                 <span>邮&nbsp;&nbsp;箱</span>
-                <input type="text" class="form-control"/>
+                <input type="text" class="form-control" id="email" name="email"/>
             </div>
             <div class="form-group">
                 <span>地&nbsp;&nbsp;址</span>
-                <input type="text" class="form-control"/>
+                <input type="text" class="form-control" id="address" name="address"/>
             </div>
             <div class="form-group">
                 <span>备&nbsp;&nbsp;注</span>
-                <textarea name="" id=""></textarea>
+                <textarea name="text" id="text"></textarea>
             </div>
             <div class="tac">
                 <input type="submit" class="submit" value="提交"/>

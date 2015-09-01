@@ -47,8 +47,6 @@ class NewsController extends BaseController {
      */
     public function read(){
         $this->assign('details', 1);
-        $this->assign('webtitle',L('T_NEWS'));
-        $this -> assign('b_url', 'News/index');
         $this->assign("ad_info2", $this->getAd('news'));
         $this->assign("ad_info", $this->getAd('bottom'));
         $id=I('get.id');
@@ -80,6 +78,7 @@ class NewsController extends BaseController {
             $this->assign('auther',$this->getAuther($info['aid']));
             $m_news->where($map)->setInc('click',1);
 
+            $this->assign('webtitle',$info['title'].'-'.L('T_PRODUCT'));
             $this->display();
         }else{
             $this->_empty($id);

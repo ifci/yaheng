@@ -110,6 +110,24 @@
                     return $(this).addClass("active animated " + ease);
                 }
             })
+        },
+        // 动态图
+        gif: function(opts){
+            var defaults = {
+                v: '0.0.1',
+                delay: 1000   //延迟时间
+            }, options = $.extend(defaults, opts);
+            return this.each(function() {
+                var len = $(this).children().length;
+                var that = $(this);
+                var i = 0;
+                setInterval(function(){
+                    i >= len ? i = 0 : false;
+                    that.children().eq(i).show();
+                    that.children().eq(i-1).hide();
+                    i++;
+                }, options.delay || 1000);
+            })
         }
     })
 })(jQuery);
@@ -172,6 +190,17 @@ $(function(){
                $('.map').hide();
                $('.layer-bg').remove();
             }
+        },
+        mouseover: {
+            '.s_tel,.s_wx': function(){
+                $('.sharebar_con').show();
+                $('.sharebar_con span').eq($(this).index()).show();
+            }
+        },
+        mouseout: {
+            '.s_tel,.s_wx': function(){
+                $('.sharebar_con,.sharebar_con span').hide();
+            }
         }
     });
 
@@ -200,6 +229,8 @@ $(function(){
     }, 1500);
 
 
+
+    $('.dynamic').gif();
 
 
 });

@@ -21,7 +21,7 @@ class ProductController extends BaseController {
             $cate[$n]['voo'] = $C -> where('pid='.$val['cid']) -> select();
         }
         $this -> assign('cate_list', $cate);
-
+//        dump($cate[1]);
 
         $list = $P -> field('id,cid,url,image_id') -> where('status=1') -> order('id DESC') -> select();
         $this->assign("list", $list);
@@ -55,15 +55,17 @@ class ProductController extends BaseController {
     }
 
     public function catelist(){
-        $cid = I('get.cid');
-        $sid = I('post.sid');
-        $P = M('Product');
         $C = M("Category");
-//        dump(get_default_img('221,222'));
+        $P = M('Product');
+        $cid = I('get.cid');
+        $sid=I('get.sid') ? I('get.sid') : $C -> where("type='s'") -> order('cid desc') -> getField('cid');
+        $this -> assign('sid', $sid);
         if(IS_POST){
+            $page = I('post.page') + 1;
             $map['status'] = 1;
             $map['sid'] = $sid;
-            $list = $P -> where($map) -> limit(2) -> select();
+            $map['cid'] = $cid;
+            $list = $P -> where($map) -> order('id desc') -> limit($page*4, 4) -> select();
             foreach($list as $n => $val){
                 $list[$n]['savapath'] = get_default_img($val['image_id']);
             }
@@ -75,10 +77,16 @@ class ProductController extends BaseController {
                 /*输出季节*/
                 $season = $C -> where("type='s'") -> order('cid desc') -> select();
                 $this -> assign('season', $season);
-
                 /*输出默认产品*/
-                $list = $P -> where('status=1 and sid='.$season[0]['cid']) -> limit(8) -> order('id desc') -> select();
+                $list = $P -> where('status=1 and sid='.$sid.' and cid='.$cid) -> limit(8) -> order('id desc') -> select();
                 $this->assign("list", $list);
+
+                $count = $P -> where('status=1 and sid='.$sid.' and cid='.$cid) -> count();
+                $this -> assign('count', $count);
+
+
+                $this->assign('total', ceil($P -> where('status=1 and sid='.$sid.' and cid='.$cid) -> count()/4));
+
 
                 $this -> display();
             }else{

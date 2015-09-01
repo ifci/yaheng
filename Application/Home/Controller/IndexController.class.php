@@ -15,6 +15,9 @@ class IndexController extends BaseController {
         $this -> assign("news_list", $news_list);
 
 
+        $gif = M('Gif') -> where('id=1') -> getField('image_id');
+        $this -> assign('gif', get_img_array($gif));
+
 
 
         $this -> display();

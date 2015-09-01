@@ -26,6 +26,7 @@ function commonAjaxSubmit(url,formObj){
         url:url,
         type:"POST",
         success:function(data, st) {
+            console.log(data);
             //                var data = eval("(" + data + ")");
             if(data.status==1){
                 popup.success(data.info);

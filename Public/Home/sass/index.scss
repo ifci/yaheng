@@ -5,6 +5,8 @@ html, body {
   height: 100%;
 }
 
+
+
 .header{
   width: 100%;
   position: fixed;
@@ -13,144 +15,6 @@ html, body {
   height: 0;
   z-index: 9;
 }
-
-.menu{
-  @extend %fl;
-  width: 44px;
-  height: 44px;
-  @include align;
-  cursor: pointer;
-  margin-top: 38px;
-  border: 2px solid rgba(60,60,60,1);
-  @include transition(1,border-color);
-  /*&:hover{
-    border: 2px solid rgba(60,60,60,1);
-  }*/
-  i{
-    @extend %inline,%icon;
-    width: 28px;
-    height: 18px;
-    background-position: 0 -256px;
-    margin-top: 12px;
-  }
-}
-
-.menu_list{
-  @extend %fl,%pr;
-  border: 2px solid #3f3f3f;
-  height: 44px;
-  line-height: 44px;
-  position: relative;
-  margin: 38px 0 0 10px;
-  @include fz(14px);
-  @include transition(.6,all);
-  ul{
-    overflow: hidden;
-    padding: 0 12px;
-  }
-  a{
-    color: #6B6B6B;
-    &:hover{
-      -webkit-transition-duration: 0s;
-      transition-duration: 0s;
-      color:#fff;
-      text-shadow:0 0 12px #fff;
-    }
-  }
-  li{
-    @extend %fl;
-    padding: 0 12px;
-    &.on{
-      a{
-        color: #d2d6d5;
-        text-shadow: 1px 1px 0 #000;
-      }
-    }
-  }
-  .close{
-    background: #3f3f3f;
-    @extend %pa;
-    @include align;
-    width: 14px;
-    height: 14px;
-    line-height: 14px;
-    color: #fff;
-    right: -16px;
-    top: -2px;
-    cursor: pointer;
-  }
-  &.show{
-    transform-origin: 50% -10% 0px;
-//    box-shadow: rgba(0, 0, 0, 0.34902) 2px 2px 4px 0;
-    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    opacity: 1;
-  }
-  &.hide{
-    transform-origin: 0 0 0;
-//    box-shadow: none;
-    transform: matrix3d(1, 0, 0, 0, 0, 0, -1, 0, 0, 1, 0, 0, 0, 0, 0, 1);
-    opacity: 0;
-  }
-}
-
-.sharebar{
-  @extend %fr;
-  margin-top: 38px;
-  @include align;
-  a{
-    @extend %fl;
-    width: 44px;
-    height: 44px;
-    border: 2px solid #3f3f3f;
-    &:first-child,&:nth-child(2){
-      border-right: none;
-    }
-    &:hover{
-      border: 2px solid #fff;
-      margin-left: -2px;
-      & + a{
-        border-left: none;
-      }
-    }
-  }
-  i{
-    @extend %inline,%icon;
-    width: 30px;
-    height: 30px;
-    margin-top: 7px;
-  }
-  .s_tel{
-    i{
-      background-position: 0 -355px;
-    }
-    &:hover{
-      i{
-        background-position: 0 -467px;
-      }
-    }
-  }
-  .s_wx{
-    i{
-      background-position: -2px -395px;
-    }
-    &:hover{
-      i{
-        background-position: -2px -505px;
-      }
-    }
-  }
-  .s_wb{
-    i{
-      background-position: 0 -431px;
-    }
-    &:hover{
-      i{
-        background-position: 0 -537px;
-      }
-    }
-  }
-}
-
 
 .swiper-container {
   width: 100%;
@@ -355,7 +219,7 @@ html, body {
 .slide-14{
   margin: 10px 0 0 -10%;
   @include align;
-  @extend %ffst;
+//  @extend %ffst;
   @include fz(16px);
   color: #333;
   line-height: 1.6;
@@ -375,7 +239,7 @@ html, body {
 }
 
 .slide-18{
-  width: 22%;
+  width: 357px;
   margin: 140px auto 0;
 }
 
@@ -645,6 +509,12 @@ html, body {
 
 .fade{
   opacity: 0;
+}
+
+.dynamic{
+  img{
+    display: none;
+  }
 }
 
 

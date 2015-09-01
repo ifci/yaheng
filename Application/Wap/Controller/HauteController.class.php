@@ -29,7 +29,7 @@ class HauteController extends BaseController {
 
     public function enroll(){
 
-        if(I('POST')){
+        if(IS_POST){
             $data['uname']=I('post.uname');
             $data['tel']=I('post.tel');
             $data['email']=I('post.email');

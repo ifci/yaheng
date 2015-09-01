@@ -1,5 +1,29 @@
-.bread{font-family:SimSun}body{font-family:Microsoft yahei}.paging em, .paging a, .paging span, .bread
-i{display:inline-block;*display:inline;zoom:1;vertical-align:middle}.bread{zoom:1}.bread:after{content:".";display:block;height:0;clear:both;visibility:hidden}html,body,form,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,em,address,a,input,textarea,span,strong,img{margin:0px;padding:0px}body{font-size:12px;color:#666}ul,dl{list-style:none}input,textarea,select,button{font-size:12px;outline:none}img{border:none}a{color:#666;text-decoration:none;blr:expression(this.onFocus=this.blur());outline:none;-webkit-transition:color 0.8s ease;-moz-transition:color 0.8s ease;-o-transition:color 0.8s ease;transition:color 0.8s ease}a:hover{color:#333}i,em{font-style:normal}table{border-collapse:collapse;margin:0px}thead,tbody,tfoot,tr,td{margin:0px}h1,h2,h3,h4,h5,h6{font-size:12px;font-weight:normal}::selection{background:#868686;color:#fff}::-moz-selection{background:#868686;color:#fff}section,article,aside,header,footer,nav,dialog,figure{display:block}.clear{clear:both}.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}.clearfix{zoom:1}.pr{position:relative;z-index:0}.pa{position:absolute}.tin{text-indent:2em}.tac{text-align:center}.tal{text-align:left}.tar{text-align:right}.fl{float:left}.fr{float:right}.center{width:100%;max-width:1200px;margin:auto;overflow:hidden}.vt{vertical-align:top}@font-face{font-family:'BEBAS';src:url("/yaheng/Public/Home/fonts/BEBAS.eot");src:url("/yaheng/Public/Home/fonts/BEBAS.eot?#font-spider") format("embedded-opentype"), url("/yaheng/Public/Home/fonts/BEBAS.woff") format("woff"), url("/yaheng/Public/Home/fonts/BEBAS.ttf") format("truetype"), url("/yaheng/Public/Home/fonts/BEBAS.svg") format("svg");font-weight:normal;font-style:normal}.content{position:relative;min-height:100%;_height:100%}.paging{text-align:center;margin-top:50px;font-size:16px}.paging em, .paging
+.bread{font-family:SimSun}body{font-family:Microsoft yahei}.menu i, .sharebar
+i{background-image:url(/yaheng/Public/Home/images/icon.png);background-repeat:no-repeat}.menu i, .sharebar i, .paging em, .paging a, .paging span, .bread
+i{display:inline-block;*display:inline;zoom:1;vertical-align:middle}.bread{zoom:1}.bread:after{content:".";display:block;height:0;clear:both;visibility:hidden}.menu, .menu_list, .menu_list li, .sharebar
+a{float:left}.sharebar{float:right}.menu_list, .sharebar, .sharebar
+a{position:relative}.menu_list .close,.sharebar_con{position:absolute}html,body,form,h1,h2,h3,h4,h5,h6,div,dl,dt,dd,ul,ol,li,p,em,address,a,input,textarea,span,strong,img{margin:0px;padding:0px}body{font-size:12px;color:#666}ul,dl{list-style:none}input,textarea,select,button{font-size:12px;outline:none}img{border:none}a{color:#666;text-decoration:none;outline:none;-webkit-transition:color 0.8s ease;-moz-transition:color 0.8s ease;-o-transition:color 0.8s ease;transition:color 0.8s ease}a:hover{color:#333}i,em{font-style:normal}table{border-collapse:collapse;margin:0px}thead,tbody,tfoot,tr,td{margin:0px}h1,h2,h3,h4,h5,h6{font-size:12px;font-weight:normal}::selection{background:#868686;color:#fff}::-moz-selection{background:#868686;color:#fff}section,article,aside,header,footer,nav,dialog,figure{display:block}.clear{clear:both}.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}.clearfix{zoom:1}.pr{position:relative;z-index:0}.pa{position:absolute}.tin{text-indent:2em}.tac{text-align:center}.tal{text-align:left}.tar{text-align:right}.fl{float:left}.fr{float:right}.center{width:100%;max-width:1200px;margin:auto;overflow:hidden}.vt{vertical-align:top}.header{width:100%}.menu{width:44px;height:44px;text-align:center;cursor:pointer;margin-top:38px;border:2px
+solid #3c3c3c;-webkit-transition:1s border-color ease;-moz-transition:1s border-color ease;-ms-transition:1s border-color ease;-o-transition:1s border-color ease;transition:1s border-color ease}.menu
+i{width:28px;height:18px;background-position:0 -256px;margin-top:12px}.menu_list{border:2px
+solid #3f3f3f;height:44px;line-height:44px;position:relative;margin:38px
+0 0 10px;font-size:14px;-webkit-transition:0.6s all ease;-moz-transition:0.6s all ease;-ms-transition:0.6s all ease;-o-transition:0.6s all ease;transition:0.6s all ease}.menu_list
+ul{overflow:hidden;padding:0
+12px}.menu_list
+a{color:#6B6B6B}.menu_list a:hover{-webkit-transition-duration:0s;transition-duration:0s;color:#666;font-weight:bold;text-shadow:0 0 12px #fff}.menu_list
+li{padding:0
+12px}.menu_list li.on
+a{font-weight:bold;color:#d2d6d5;text-shadow:1px 1px 0 #000}.menu_list
+.close{background:#3f3f3f;text-align:center;width:14px;height:14px;line-height:14px;color:#fff;right:-16px;top:-2px;cursor:pointer}.menu_list.show{transform-origin:50% -10% 0px;transform:matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);opacity:1}.menu_list.hide{transform-origin:0 0 0;transform:matrix3d(1,0,0,0,0,0,-1,0,0,1,0,0,0,0,0,1);opacity:0}.header_wrap{width:100%;max-width:1200px;margin:auto;z-index:9}.content{position:relative;min-height:100%;_height:100%}.sharebar{margin-top:38px;text-align:center}.sharebar
+a{width:44px;height:44px;border:2px
+solid #3f3f3f}.sharebar a:first-child, .sharebar a:nth-child(2){border-right:none}.sharebar a:hover{opacity: .6}.sharebar a:hover
+.sharebar_con{display:block}.sharebar
+i{width:30px;height:30px;margin-top:7px}.sharebar .s_tel
+i{background-position:0 -355px}.sharebar .s_wx
+i{background-position:-2px -395px}.sharebar .s_wb
+i{background-position:0 -431px}.sharebar_con{display:none;top:48px;left:0;background:#C5C5C5;width:100%;color:#fff;padding:10px;box-sizing:border-box;text-align:left}.sharebar_con
+img{width:100%}.sharebar_con
+span{display:none}.sharebar_con
+b{display:block;font-size:17px;font-weight:normal;line-height:2}.paging{text-align:center;margin-top:50px;font-size:16px}.paging em, .paging
 a{border:1px
 solid #c5c4c5;color:#666;background:#fff;-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}.paging a:hover{color:#fff;background:#3f3f3f}.paging
 span{background:#333;color:#fff}.paging em, .paging a, .paging
@@ -130,32 +154,11 @@ Pagination Styles
 .swiper-visible-switch {
     /* Specific visible button style: */
 
-}.slide-3,.slide-6,.slide-14,.news_list_left,.news_list_right{font-family:SimSun}.menu i, .sharebar i, .darkButton
-i{background-image:url(/yaheng/Public/Home/images/icon.png);background-repeat:no-repeat}.menu i, .sharebar i, .swiper-pagination-wrapper, .swiper-pagination-switch, .contact .contact_l em, .contact .contact_l i, .darkButton
-i{display:inline-block;*display:inline;zoom:1;vertical-align:middle}.menu, .menu_list, .menu_list li, .sharebar a, .news_list li, .news_list_left, .news_list_right, .contact .contact_l, .contact .contact_c, .contact .contact_d i, .contact .contact_d
-span{float:left}.sharebar,.slide-7{float:right}.menu_list, .slide-13, .slide-13
-img{position:relative}.menu_list .close,.slide-13:after,.slide-19{position:absolute}html,body{position:relative;height:100%}.header{width:100%;position:fixed;top:0;left:0;height:0;z-index:9}.menu{width:44px;height:44px;text-align:center;cursor:pointer;margin-top:38px;border:2px
-solid #3c3c3c;-webkit-transition:1s border-color ease;-moz-transition:1s border-color ease;-ms-transition:1s border-color ease;-o-transition:1s border-color ease;transition:1s border-color ease}.menu
-i{width:28px;height:18px;background-position:0 -256px;margin-top:12px}.menu_list{border:2px
-solid #3f3f3f;height:44px;line-height:44px;position:relative;margin:38px
-0 0 10px;font-size:14px;-webkit-transition:0.6s all ease;-moz-transition:0.6s all ease;-ms-transition:0.6s all ease;-o-transition:0.6s all ease;transition:0.6s all ease}.menu_list
-ul{overflow:hidden;padding:0
-12px}.menu_list
-a{color:#6B6B6B}.menu_list a:hover{-webkit-transition-duration:0s;transition-duration:0s;color:#fff;text-shadow:0 0 12px #fff}.menu_list
-li{padding:0
-12px}.menu_list li.on
-a{color:#d2d6d5;text-shadow:1px 1px 0 #000}.menu_list
-.close{background:#3f3f3f;text-align:center;width:14px;height:14px;line-height:14px;color:#fff;right:-16px;top:-2px;cursor:pointer}.menu_list.show{transform-origin:50% -10% 0px;transform:matrix3d(1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1);opacity:1}.menu_list.hide{transform-origin:0 0 0;transform:matrix3d(1,0,0,0,0,0,-1,0,0,1,0,0,0,0,0,1);opacity:0}.sharebar{margin-top:38px;text-align:center}.sharebar
-a{width:44px;height:44px;border:2px
-solid #3f3f3f}.sharebar a:first-child, .sharebar a:nth-child(2){border-right:none}.sharebar a:hover{border:2px
-solid #fff;margin-left:-2px}.sharebar a:hover+a{border-left:none}.sharebar
-i{width:30px;height:30px;margin-top:7px}.sharebar .s_tel
-i{background-position:0 -355px}.sharebar .s_tel:hover
-i{background-position:0 -467px}.sharebar .s_wx
-i{background-position:-2px -395px}.sharebar .s_wx:hover
-i{background-position:-2px -505px}.sharebar .s_wb
-i{background-position:0 -431px}.sharebar .s_wb:hover
-i{background-position:0 -537px}.swiper-container{width:100%;height:100%;margin-left:auto;margin-right:auto;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;overflow:hidden}.swiper-slide{text-align:center;font-size:18px;background-position:50% 0;background-repeat:no-repeat;-webkit-background-size:cover;background-size:cover}.swiper-pagination{position:absolute;bottom:0;left:0;width:100%;text-align:center}.swiper-pagination-wrapper{width:100%;max-width:1200px}.swiper-pagination-switch{background:#fff;width:10%;max-width:120px;height:12px;cursor:pointer}.swiper-active-switch{background:#555 !important}.arrow-left,.arrow-right{width:58px;height:58px;position:absolute;top:50%;margin-top:-29px;background:url(/yaheng/Public/Home/images/icon.png) no-repeat;z-index:2;opacity: .6}.arrow-left{left:40px;background-position:0 -62px}.arrow-left:hover{opacity:1;background-position:0 0}.arrow-right{right:40px;background-position:0 -186px}.arrow-right:hover{opacity:1;background-position:0 -124px}.arrow-left.arrow-stop,.arrow-right.arrow-stop{display:none}.swiper-wrapper
+}.slide-3,.slide-6,.news_list_left,.news_list_right{font-family:SimSun}.darkButton
+i{background-image:url(/yaheng/Public/Home/images/icon.png);background-repeat:no-repeat}.swiper-pagination-wrapper, .swiper-pagination-switch, .contact .contact_l em, .contact .contact_l i, .darkButton
+i{display:inline-block;*display:inline;zoom:1;vertical-align:middle}.news_list li, .news_list_left, .news_list_right, .contact .contact_l, .contact .contact_c, .contact .contact_d i, .contact .contact_d
+span{float:left}.slide-7{float:right}.slide-13, .slide-13
+img{position:relative}.slide-13:after,.slide-19{position:absolute}html,body{position:relative;height:100%}.header{width:100%;position:fixed;top:0;left:0;height:0;z-index:9}.swiper-container{width:100%;height:100%;margin-left:auto;margin-right:auto;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;overflow:hidden}.swiper-slide{text-align:center;font-size:18px;background-position:50% 0;background-repeat:no-repeat;-webkit-background-size:cover;background-size:cover}.swiper-pagination{position:absolute;bottom:0;left:0;width:100%;text-align:center}.swiper-pagination-wrapper{width:100%;max-width:1200px}.swiper-pagination-switch{background:#fff;width:10%;max-width:120px;height:12px;cursor:pointer}.swiper-active-switch{background:#555 !important}.arrow-left,.arrow-right{width:58px;height:58px;position:absolute;top:50%;margin-top:-29px;background:url(/yaheng/Public/Home/images/icon.png) no-repeat;z-index:2;opacity: .6}.arrow-left{left:40px;background-position:0 -62px}.arrow-left:hover{opacity:1;background-position:0 0}.arrow-right{right:40px;background-position:0 -186px}.arrow-right:hover{opacity:1;background-position:0 -124px}.arrow-left.arrow-stop,.arrow-right.arrow-stop{display:none}.swiper-wrapper
 img{width:100%}.slide-1{max-width:558px;width:46.5%;margin:18% 0 0 4%}.slide-2{max-width:452px;width:54.5%;margin:20px
 0 0 4%;padding:0
 0 18px}.slide-2>img{width:92%;max-width:452px}.slide-3{border-top:1px solid #343435;margin:20px
@@ -166,7 +169,7 @@ li{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABW
 img{width:auto;height:100%;z-index:9}.slide-13:after{content:'';display:block;left:0;top:20px;width:100%;border:1px
 dashed #e9e9eb}.slide-14{margin:10px
 0 0 -10%;text-align:center;font-size:16px;color:#333;line-height:1.6}.slide-15{width:59%;margin-left:14%}.slide-16{margin:30px
-0 0 14% !important}.slide-17{margin:30% 0 0 14% !important}.slide-18{width:22%;margin:140px
+0 0 14% !important}.slide-17{margin:30% 0 0 14% !important}.slide-18{width:357px;margin:140px
 auto 0}.news_list{margin-top:148px;text-align:right}.news_list
 li{background:#fff;background:rgba(255, 255, 255, 0.5);width:25%;color:#333}.news_list li:hover{background:#000;color:#fff}.news_list li:hover a, .news_list li:hover
 .day{color:#fff}.news_list
@@ -202,7 +205,8 @@ a{color:#000;padding:0
 40px}.darkButton-white
 i{background-position:0 -314px}.darkButton-white:hover{background-color:#000;-webkit-font-smoothing:antialiased;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none}.darkButton-white:hover
 a{color:#fff !important}.darkButton-white:hover
-i{background-position:0 -281px}.animated{-webkit-animation-name:fadeInUp;animation-name:fadeInUp;-webkit-animation-duration: .6s;animation-duration: .6s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.fade{opacity:0}.tips{width:170px;height:60px;display:none;left:50%;margin-left:-85px;position:absolute;z-index:10;bottom:90px;margin-top:0px;zoom:1}.t_mouse{width:33px;height:58px;display:block;position:absolute;left:0px;top:1px}.t_key{width:93px;height:60px;display:block;position:absolute;right:0px;top:0px}.t_mouse div, .t_key
+i{background-position:0 -281px}.animated{-webkit-animation-name:fadeInUp;animation-name:fadeInUp;-webkit-animation-duration: .6s;animation-duration: .6s;-webkit-animation-fill-mode:both;animation-fill-mode:both}.fade{opacity:0}.dynamic
+img{display:none}.tips{width:170px;height:60px;display:none;left:50%;margin-left:-85px;position:absolute;z-index:10;bottom:90px;margin-top:0px;zoom:1}.t_mouse{width:33px;height:58px;display:block;position:absolute;left:0px;top:1px}.t_key{width:93px;height:60px;display:block;position:absolute;right:0px;top:0px}.t_mouse div, .t_key
 div{width:100%;height:100%;display:block;position:absolute;left:0px;top:0px;background-position:0px 0px;background-repeat:no-repeat}.t_mouse
 .t_mouse_0{background-image:url(/yaheng/Public/Home/images/tip/mouse_0.png);_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/tip/mouse_0.png')}.t_mouse
 .t_mouse_1{background-image:url(/yaheng/Public/Home/images/tip/mouse_1.png);_background:none;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='images/tip/mouse_1.png');display:none}.t_key

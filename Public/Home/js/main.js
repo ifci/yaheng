@@ -25,6 +25,7 @@
 })(jQuery);
 $(function(){
 
+    var page = 1,total = $('#total').val();     //当前页和总页数
     var web = {
         val : {
             uname : $("#uname").val(),
@@ -90,6 +91,17 @@ $(function(){
                 $('.layer').hide();
                 $('body').css('overflow','auto');
             }
+        },
+        mouseover: {
+            '.s_tel,.s_wx': function(){
+                $('.sharebar_con').show();
+                $('.sharebar_con span').eq($(this).index()).show();
+            }
+        },
+        mouseout: {
+            '.s_tel,.s_wx': function(){
+                $('.sharebar_con,.sharebar_con span').hide();
+            }
         }
     });
 
@@ -104,7 +116,6 @@ $(function(){
         $("#tips").show();
     },1000);
 
-    var page = 1,total = $('#total').val();     //当前页和总页数
     total < 2 ? $('.add_more').remove() : false;
     $('.add_more').on('click', function(){
         $.ajax({
@@ -114,7 +125,6 @@ $(function(){
             dataType: "json",
             success: function(data){
                 page++;
-                console.log(page + '+' + total);
                 var str = '';
                 $.each(data, function(i, val){
                     str += '<li>' +
@@ -131,6 +141,10 @@ $(function(){
             }
         })
     });
+
+
+    /*商品季节切换*/
+
 
 
 

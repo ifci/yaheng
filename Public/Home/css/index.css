@@ -1,32 +1,32 @@
 /*
- * Copyright (c) 2015 JKD TEAM (9koudai.net)
+ * Copyright (c) 2015 JKD TEAM (shjkd.cn)
  * @Author: fcdcyy@sina.cn
  *
  * @DateTime: 2015-03-23 09:09:49
  */
-.slide-3, .slide-6, .slide-14, .news_list_left, .news_list_right {
+.slide-3, .slide-6, .news_list_left, .news_list_right {
   font-family: SimSun; }
 
-.menu i, .sharebar i, .darkButton i {
+.darkButton i {
   background-image: url(../images/icon.png);
   background-repeat: no-repeat; }
 
-.menu i, .sharebar i, .swiper-pagination-wrapper, .swiper-pagination-switch, .contact .contact_l em, .contact .contact_l i, .darkButton i {
+.swiper-pagination-wrapper, .swiper-pagination-switch, .contact .contact_l em, .contact .contact_l i, .darkButton i {
   display: inline-block;
   *display: inline;
   zoom: 1;
   vertical-align: middle; }
 
-.menu, .menu_list, .menu_list li, .sharebar a, .news_list li, .news_list_left, .news_list_right, .contact .contact_l, .contact .contact_c, .contact .contact_d i, .contact .contact_d span {
+.news_list li, .news_list_left, .news_list_right, .contact .contact_l, .contact .contact_c, .contact .contact_d i, .contact .contact_d span {
   float: left; }
 
-.sharebar, .slide-7 {
+.slide-7 {
   float: right; }
 
-.menu_list, .slide-13, .slide-13 img {
+.slide-13, .slide-13 img {
   position: relative; }
 
-.menu_list .close, .slide-13:after, .slide-19 {
+.slide-13:after, .slide-19 {
   position: absolute; }
 
 html, body {
@@ -40,104 +40,6 @@ html, body {
   left: 0;
   height: 0;
   z-index: 9; }
-
-.menu {
-  width: 44px;
-  height: 44px;
-  text-align: center;
-  cursor: pointer;
-  margin-top: 38px;
-  border: 2px solid #3c3c3c;
-  -webkit-transition: 1s border-color ease;
-  -moz-transition: 1s border-color ease;
-  -ms-transition: 1s border-color ease;
-  -o-transition: 1s border-color ease;
-  transition: 1s border-color ease;
-  /*&:hover{
-    border: 2px solid rgba(60,60,60,1);
-  }*/ }
-  .menu i {
-    width: 28px;
-    height: 18px;
-    background-position: 0 -256px;
-    margin-top: 12px; }
-
-.menu_list {
-  border: 2px solid #3f3f3f;
-  height: 44px;
-  line-height: 44px;
-  position: relative;
-  margin: 38px 0 0 10px;
-  font-size: 14px;
-  -webkit-transition: 0.6s all ease;
-  -moz-transition: 0.6s all ease;
-  -ms-transition: 0.6s all ease;
-  -o-transition: 0.6s all ease;
-  transition: 0.6s all ease; }
-  .menu_list ul {
-    overflow: hidden;
-    padding: 0 12px; }
-  .menu_list a {
-    color: #6B6B6B; }
-    .menu_list a:hover {
-      -webkit-transition-duration: 0s;
-      transition-duration: 0s;
-      color: #fff;
-      text-shadow: 0 0 12px #fff; }
-  .menu_list li {
-    padding: 0 12px; }
-    .menu_list li.on a {
-      color: #d2d6d5;
-      text-shadow: 1px 1px 0 #000; }
-  .menu_list .close {
-    background: #3f3f3f;
-    text-align: center;
-    width: 14px;
-    height: 14px;
-    line-height: 14px;
-    color: #fff;
-    right: -16px;
-    top: -2px;
-    cursor: pointer; }
-  .menu_list.show {
-    transform-origin: 50% -10% 0px;
-    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
-    opacity: 1; }
-  .menu_list.hide {
-    transform-origin: 0 0 0;
-    transform: matrix3d(1, 0, 0, 0, 0, 0, -1, 0, 0, 1, 0, 0, 0, 0, 0, 1);
-    opacity: 0; }
-
-.sharebar {
-  margin-top: 38px;
-  text-align: center; }
-  .sharebar a {
-    width: 44px;
-    height: 44px;
-    border: 2px solid #3f3f3f; }
-    .sharebar a:first-child, .sharebar a:nth-child(2) {
-      border-right: none; }
-    .sharebar a:hover {
-      border: 2px solid #fff;
-      margin-left: -2px; }
-      .sharebar a:hover + a {
-        border-left: none; }
-  .sharebar i {
-    width: 30px;
-    height: 30px;
-    margin-top: 7px; }
-  .sharebar .s_tel i {
-    background-position: 0 -355px; }
-  .sharebar .s_tel:hover i {
-    background-position: 0 -467px; }
-  .sharebar .s_wx i {
-    background-position: -2px -395px; }
-  .sharebar .s_wx:hover i {
-    background-position: -2px -505px; }
-  .sharebar .s_wb i {
-    background-position: 0 -431px; }
-  .sharebar .s_wb:hover i {
-    background-position: 0 -537px; }
 
 .swiper-container {
   width: 100%;
@@ -318,7 +220,7 @@ html, body {
   margin: 30% 0 0 14% !important; }
 
 .slide-18 {
-  width: 22%;
+  width: 357px;
   margin: 140px auto 0; }
 
 .news_list {
@@ -539,6 +441,9 @@ html, body {
 
 .fade {
   opacity: 0; }
+
+.dynamic img {
+  display: none; }
 
 /*tip*/
 .tips {

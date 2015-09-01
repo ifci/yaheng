@@ -7,7 +7,7 @@ class PublicModel extends Model {
         $datas = $_POST;
 
         if (check_verify($_POST['verify_code'])==false) {
-            die(json_encode(array('status' => 0, 'info' => "验证码错误啦，再输入吧",'url'=>__SELF__)));
+            die(json_encode(array('status' => 0, 'info' => "验证码错误啦，再输入吧")));
         }
         $M = M("Admin");
         if ($M->where("`email`='" . $datas['email'] . "'")->count() >= 1) {

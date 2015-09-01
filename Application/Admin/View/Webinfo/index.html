@@ -62,6 +62,10 @@
                             <td><input class="input" name="keyword" type="text" size="40" value="{$site.SITE_INFO.keyword}" /></td>
                         </tr>
                         <tr>
+                            <th>新浪微博地址：</th>
+                            <td><input class="input" name="weibo" type="text" size="40" value="{$site.SITE_INFO.weibo}" /></td>
+                        </tr>
+                        <tr>
                             <th>开启多语言：</th>
                             <td><label style="margin-right: 10px;"><input type="radio" name="LANG_SWITCH_ON" <if condition="$site['SITE_INFO']['LANG_SWITCH_ON'] eq 1">checked</if> value="1">开启</label><label><input type="radio"  <if condition="$site['SITE_INFO']['LANG_SWITCH_ON'] eq 0">checked</if>  name="LANG_SWITCH_ON" value="0">关闭</label></td>
                         </tr>
