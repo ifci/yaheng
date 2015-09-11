@@ -104,9 +104,9 @@
                             <tr>
                                 <th>年份/季节：</th>
                                 <td>
-                                    <select name="info[season]">
+                                    <select name="info[sid]">
                                         <volist name="season" id="vo">
-                                        <option value="{$vo.name}" {:($vo['name'] == $info['season'] && ACTION_NAME == 'edit') ? 'selected' : false}>{$vo.name}</option>
+                                        <option value="{$vo.cid}" {:($vo['name'] == $info['season'] && ACTION_NAME == 'edit') ? 'selected' : false}>{$vo.name}</option>
                                         </volist>
                                     </select>
                                 </td>

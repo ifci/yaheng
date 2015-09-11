@@ -154,7 +154,7 @@ Pagination Styles
 .swiper-visible-switch {
     /* Specific visible button style: */
 
-}.slide-3,.slide-6,.news_list_left,.news_list_right{font-family:SimSun}.darkButton
+}.news_list_left,.news_list_right{font-family:SimSun}.darkButton
 i{background-image:url(/yaheng/Public/Home/images/icon.png);background-repeat:no-repeat}.swiper-pagination-wrapper, .swiper-pagination-switch, .contact .contact_l em, .contact .contact_l i, .darkButton
 i{display:inline-block;*display:inline;zoom:1;vertical-align:middle}.news_list li, .news_list_left, .news_list_right, .contact .contact_l, .contact .contact_c, .contact .contact_d i, .contact .contact_d
 span{float:left}.slide-7{float:right}.slide-13, .slide-13

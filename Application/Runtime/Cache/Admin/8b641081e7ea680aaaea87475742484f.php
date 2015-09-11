@@ -122,8 +122,8 @@
                             <tr>
                                 <th>年份/季节：</th>
                                 <td>
-                                    <select name="info[season]">
-                                        <?php if(is_array($season)): $i = 0; $__LIST__ = $season;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["name"]); ?>" <?php echo ($vo['name'] == $info['season'] && ACTION_NAME == 'edit') ? 'selected' : false;?>><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+                                    <select name="info[sid]">
+                                        <?php if(is_array($season)): $i = 0; $__LIST__ = $season;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><option value="<?php echo ($vo["cid"]); ?>" <?php echo ($vo['name'] == $info['season'] && ACTION_NAME == 'edit') ? 'selected' : false;?>><?php echo ($vo["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
                                     </select>
                                 </td>
                             </tr>

@@ -124,6 +124,7 @@ class ProductController extends CommonController {
             $where['type'] = 's';
             $season = M("Category")->where($where)->order('cid desc')->select();
             $this->assign("season", $season);
+
             $this->display("add");
         }
     }

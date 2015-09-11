@@ -1,0 +1,334 @@
+[ 2015-08-25T12:04:09+08:00 ] 127.0.0.1 /yaheng/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.020001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.023001s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\www\yaheng\include\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jkd_company` [ RunTime:0.014001s ]
+ERR: 1146:Table 'yaheng.jkd_company' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `jkd_company`
+SQL: SELECT * FROM `jkd_company`  [ RunTime:0.011000s ]
+ERR: 1146:Table 'yaheng.jkd_company' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `jkd_company` 
+SQL: SHOW COLUMNS FROM `jkd_nav` [ RunTime:0.031002s ]
+SQL: SELECT `nav_name` FROM `jkd_nav` WHERE ( action='index' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `jkd_ad` [ RunTime:0.028002s ]
+SQL: SELECT * FROM `jkd_ad` WHERE ( `lang` = 'zh-cn' ) AND ( `position` = 'wxqr' ) ORDER BY sort DESC  [ RunTime:0.002000s ]
+SQL: SELECT * FROM `jkd_ad` WHERE ( `lang` = 'zh-cn' ) AND ( `position` = 'index' ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_ad` WHERE ( `lang` = 'zh-cn' ) AND ( `position` = 'bottom' ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `jkd_news` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `jkd_news` WHERE ( status=1 ) ORDER BY id desc LIMIT 8   [ RunTime:0.033002s ]
+SQL: SHOW COLUMNS FROM `jkd_gif` [ RunTime:0.046002s ]
+SQL: SELECT `image_id` FROM `jkd_gif` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `jkd_images` [ RunTime:0.019002s ]
+SQL: SELECT `savepath` FROM `jkd_images` WHERE ( `id` IN ('321','322','323','324','325','326','327','328') )  [ RunTime:0.020001s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] explode() expects parameter 2 to be string, array given D:\www\yaheng\include\Library\Think\Template.class.php 第 169 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\yaheng\include\Library\Think\Template.class.php 第 170 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given D:\www\yaheng\include\Library\Think\Template.class.php 第 169 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\yaheng\include\Library\Think\Template.class.php 第 170 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given D:\www\yaheng\include\Library\Think\Template.class.php 第 169 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\yaheng\include\Library\Think\Template.class.php 第 170 行.
+NOTIC: [8] Undefined index: limit D:\www\yaheng\include\Library\Think\Template\TagLib\Weblock.class.php 第 88 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined variable: info D:\www\yaheng\Application\Runtime\Cache\Home\4c169d1beb682410761268f13d1beb68.php 第 16 行.
+NOTIC: [8] Undefined variable: info D:\www\yaheng\Application\Runtime\Cache\Home\4c169d1beb682410761268f13d1beb68.php 第 17 行.
+SQL: SHOW COLUMNS FROM `jkd_nav` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( lang='zh-cn'  AND type='top' AND parent_id=0 ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=71 ) ORDER BY sort DESC  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=70 ) ORDER BY sort DESC  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=69 ) ORDER BY sort DESC  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=67 ) ORDER BY sort DESC  [ RunTime:0.001001s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=61 ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=57 ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=56 ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.195011s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.195011s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.013001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.013001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2015-08-25T12:04:11+08:00 ] 127.0.0.1 /yaheng/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\www\yaheng\include\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jkd_company` [ RunTime:0.009001s ]
+ERR: 1146:Table 'yaheng.jkd_company' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `jkd_company`
+SQL: SELECT * FROM `jkd_company`  [ RunTime:0.001000s ]
+ERR: 1146:Table 'yaheng.jkd_company' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `jkd_company` 
+SQL: SHOW COLUMNS FROM `jkd_nav` [ RunTime:0.011000s ]
+SQL: SELECT `nav_name` FROM `jkd_nav` WHERE ( action='favicon.ico' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `jkd_ad` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `jkd_ad` WHERE ( `lang` = 'zh-cn' ) AND ( `position` = 'wxqr' ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] explode() expects parameter 2 to be string, array given D:\www\yaheng\include\Library\Think\Template.class.php 第 169 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\yaheng\include\Library\Think\Template.class.php 第 170 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.237013s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.237013s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2015-08-25T12:04:13+08:00 ] 127.0.0.1 /yaheng/news.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\www\yaheng\include\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jkd_company` [ RunTime:0.007001s ]
+ERR: 1146:Table 'yaheng.jkd_company' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `jkd_company`
+SQL: SELECT * FROM `jkd_company`  [ RunTime:0.001000s ]
+ERR: 1146:Table 'yaheng.jkd_company' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `jkd_company` 
+SQL: SHOW COLUMNS FROM `jkd_nav` [ RunTime:0.010000s ]
+SQL: SELECT `nav_name` FROM `jkd_nav` WHERE ( action='news' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `jkd_ad` [ RunTime:0.007000s ]
+SQL: SELECT * FROM `jkd_ad` WHERE ( `lang` = 'zh-cn' ) AND ( `position` = 'wxqr' ) ORDER BY sort DESC  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `jkd_news` [ RunTime:0.010001s ]
+SQL: SHOW COLUMNS FROM `jkd_category` [ RunTime:0.059003s ]
+SQL: SHOW COLUMNS FROM `jkd_news` [ RunTime:0.008001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM jkd_news n INNER JOIN jkd_category c on c.cid=n.cid  WHERE ( n.cid = 1 ) AND ( n.status = 1 ) AND ( n.lang = 'zh-cn' ) LIMIT 1   [ RunTime:0.022001s ]
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: header D:\www\yaheng\include\Library\Think\Page.class.php 第 140 行.
+SQL: SHOW COLUMNS FROM `jkd_news` [ RunTime:0.009000s ]
+SQL: SELECT n.id,n.cid,n.title,n.summary,n.update_time,n.click,n.image_id,c.name as cname,n.published FROM jkd_news n INNER JOIN jkd_category c on c.cid=n.cid  WHERE ( n.cid = 1 ) AND ( n.status = 1 ) AND ( n.lang = 'zh-cn' ) ORDER BY id desc LIMIT 0, 4   [ RunTime:0.016001s ]
+SQL: SELECT * FROM `jkd_ad` WHERE ( `lang` = 'zh-cn' ) AND ( `position` = 'bottom' ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_ad` WHERE ( `lang` = 'zh-cn' ) AND ( `position` = 'news' ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `jkd_news` WHERE ( status=1 and cid =1 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] explode() expects parameter 2 to be string, array given D:\www\yaheng\include\Library\Think\Template.class.php 第 169 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\yaheng\include\Library\Think\Template.class.php 第 170 行.
+NOTIC: [2] explode() expects parameter 2 to be string, array given D:\www\yaheng\include\Library\Think\Template.class.php 第 169 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\yaheng\include\Library\Think\Template.class.php 第 170 行.
+NOTIC: [8] Undefined index: limit D:\www\yaheng\include\Library\Think\Template\TagLib\Weblock.class.php 第 88 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: info D:\www\yaheng\Application\Runtime\Cache\Home\23ac2c7778029f2e8a3b1e897a5ab127.php 第 15 行.
+NOTIC: [8] Undefined variable: info D:\www\yaheng\Application\Runtime\Cache\Home\23ac2c7778029f2e8a3b1e897a5ab127.php 第 16 行.
+SQL: SHOW COLUMNS FROM `jkd_nav` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( lang='zh-cn'  AND type='top' AND parent_id=0 ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=71 ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=70 ) ORDER BY sort DESC  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=69 ) ORDER BY sort DESC  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=67 ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=61 ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=57 ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=56 ) ORDER BY sort DESC  [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: details D:\www\yaheng\Application\Runtime\Cache\Home\23ac2c7778029f2e8a3b1e897a5ab127.php 第 51 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+SQL: SHOW COLUMNS FROM `jkd_images` [ RunTime:0.008000s ]
+SQL: SELECT `savepath` FROM `jkd_images` WHERE ( `id` = 96 ) LIMIT 1   [ RunTime:0.011001s ]
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+SQL: SELECT `savepath` FROM `jkd_images` WHERE ( `id` = 96 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+SQL: SELECT `savepath` FROM `jkd_images` WHERE ( `id` = 204 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+SQL: SELECT `savepath` FROM `jkd_images` WHERE ( `id` = 174 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.122007s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.123007s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2015-08-25T12:04:14+08:00 ] 127.0.0.1 /yaheng/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\www\yaheng\include\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jkd_company` [ RunTime:0.007001s ]
+ERR: 1146:Table 'yaheng.jkd_company' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `jkd_company`
+SQL: SELECT * FROM `jkd_company`  [ RunTime:0.000000s ]
+ERR: 1146:Table 'yaheng.jkd_company' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `jkd_company` 
+SQL: SHOW COLUMNS FROM `jkd_nav` [ RunTime:0.008000s ]
+SQL: SELECT `nav_name` FROM `jkd_nav` WHERE ( action='favicon.ico' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `jkd_ad` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `jkd_ad` WHERE ( `lang` = 'zh-cn' ) AND ( `position` = 'wxqr' ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] explode() expects parameter 2 to be string, array given D:\www\yaheng\include\Library\Think\Template.class.php 第 169 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\yaheng\include\Library\Think\Template.class.php 第 170 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-25T12:04:17+08:00 ] 127.0.0.1 /yaheng/news_r/51.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\www\yaheng\include\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jkd_company` [ RunTime:0.011001s ]
+ERR: 1146:Table 'yaheng.jkd_company' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `jkd_company`
+SQL: SELECT * FROM `jkd_company`  [ RunTime:0.001000s ]
+ERR: 1146:Table 'yaheng.jkd_company' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `jkd_company` 
+SQL: SHOW COLUMNS FROM `jkd_nav` [ RunTime:0.010001s ]
+SQL: SELECT `nav_name` FROM `jkd_nav` WHERE ( action='news' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `jkd_ad` [ RunTime:0.008000s ]
+SQL: SELECT * FROM `jkd_ad` WHERE ( `lang` = 'zh-cn' ) AND ( `position` = 'wxqr' ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_ad` WHERE ( `lang` = 'zh-cn' ) AND ( `position` = 'news' ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_ad` WHERE ( `lang` = 'zh-cn' ) AND ( `position` = 'bottom' ) ORDER BY sort DESC  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `jkd_news` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `jkd_news` WHERE ( `id` = 51 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `jkd_news` WHERE ( status=1 and cid=1 ) ORDER BY click DESC LIMIT 10   [ RunTime:0.001000s ]
+SQL: SELECT `id`,`title` FROM `jkd_news` WHERE ( id > 51 AND cid = 1 ) ORDER BY id asc LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `id`,`title` FROM `jkd_news` WHERE ( id < 51 AND cid = 1 ) ORDER BY id desc LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `jkd_category` [ RunTime:0.011001s ]
+SQL: SELECT `name` FROM `jkd_category` WHERE ( `cid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `jkd_admin` [ RunTime:0.030002s ]
+SQL: SELECT `nickname` FROM `jkd_admin` WHERE ( `aid` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `jkd_news` SET `click`=click+1 WHERE ( `id` = 51 ) [ RunTime:0.019001s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] explode() expects parameter 2 to be string, array given D:\www\yaheng\include\Library\Think\Template.class.php 第 169 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\yaheng\include\Library\Think\Template.class.php 第 170 行.
+NOTIC: [8] Undefined index: where D:\www\yaheng\include\Library\Think\Template\TagLib\Weblock.class.php 第 37 行.
+NOTIC: [8] Undefined index: limit D:\www\yaheng\include\Library\Think\Template\TagLib\Weblock.class.php 第 88 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `jkd_nav` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( lang='zh-cn'  AND type='top' AND parent_id=0 ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=71 ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=70 ) ORDER BY sort DESC  [ RunTime:0.000000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=69 ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=67 ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=61 ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=57 ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+SQL: SELECT * FROM `jkd_nav` WHERE ( parent_id=56 ) ORDER BY sort DESC  [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant id - assumed 'id' D:\www\yaheng\Application\Runtime\Cache\Home\f3256488dc26399508e3dff7eec7f755.php 第 79 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Use of undefined constant title - assumed 'title' D:\www\yaheng\Application\Runtime\Cache\Home\f3256488dc26399508e3dff7eec7f755.php 第 81 行.
+SQL: SHOW COLUMNS FROM `jkd_news` [ RunTime:0.008001s ]
+SQL: SELECT `id`,`cid`,`title`,`update_time`,`image_id`,`status`,`published`,`summary`,`url` FROM `jkd_news` WHERE ( status=1 AND lang='zh-cn' ) ORDER BY click DESC LIMIT 8   [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined variable: image_id D:\www\yaheng\Application\Runtime\Cache\Home\f3256488dc26399508e3dff7eec7f755.php 第 126 行.
+NOTIC: [8] Undefined variable: image_id D:\www\yaheng\Application\Runtime\Cache\Home\f3256488dc26399508e3dff7eec7f755.php 第 126 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined variable: image_id D:\www\yaheng\Application\Runtime\Cache\Home\f3256488dc26399508e3dff7eec7f755.php 第 126 行.
+NOTIC: [8] Undefined variable: image_id D:\www\yaheng\Application\Runtime\Cache\Home\f3256488dc26399508e3dff7eec7f755.php 第 126 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined variable: image_id D:\www\yaheng\Application\Runtime\Cache\Home\f3256488dc26399508e3dff7eec7f755.php 第 126 行.
+NOTIC: [8] Undefined variable: image_id D:\www\yaheng\Application\Runtime\Cache\Home\f3256488dc26399508e3dff7eec7f755.php 第 126 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined variable: image_id D:\www\yaheng\Application\Runtime\Cache\Home\f3256488dc26399508e3dff7eec7f755.php 第 126 行.
+NOTIC: [8] Undefined variable: image_id D:\www\yaheng\Application\Runtime\Cache\Home\f3256488dc26399508e3dff7eec7f755.php 第 126 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined variable: image_id D:\www\yaheng\Application\Runtime\Cache\Home\f3256488dc26399508e3dff7eec7f755.php 第 126 行.
+NOTIC: [8] Undefined variable: image_id D:\www\yaheng\Application\Runtime\Cache\Home\f3256488dc26399508e3dff7eec7f755.php 第 126 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined variable: image_id D:\www\yaheng\Application\Runtime\Cache\Home\f3256488dc26399508e3dff7eec7f755.php 第 126 行.
+NOTIC: [8] Undefined variable: image_id D:\www\yaheng\Application\Runtime\Cache\Home\f3256488dc26399508e3dff7eec7f755.php 第 126 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined variable: image_id D:\www\yaheng\Application\Runtime\Cache\Home\f3256488dc26399508e3dff7eec7f755.php 第 126 行.
+NOTIC: [8] Undefined variable: image_id D:\www\yaheng\Application\Runtime\Cache\Home\f3256488dc26399508e3dff7eec7f755.php 第 126 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+NOTIC: [8] Undefined index: m D:\www\yaheng\include\Common\functions.php 第 885 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.105006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.106006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-08-25T12:04:18+08:00 ] 127.0.0.1 /yaheng/favicon.ico
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: Run Behavior\CheckLangBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\www\yaheng\include\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `jkd_company` [ RunTime:0.010001s ]
+ERR: 1146:Table 'yaheng.jkd_company' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `jkd_company`
+SQL: SELECT * FROM `jkd_company`  [ RunTime:0.001000s ]
+ERR: 1146:Table 'yaheng.jkd_company' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `jkd_company` 
+SQL: SHOW COLUMNS FROM `jkd_nav` [ RunTime:0.012001s ]
+SQL: SELECT `nav_name` FROM `jkd_nav` WHERE ( action='favicon.ico' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `jkd_ad` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `jkd_ad` WHERE ( `lang` = 'zh-cn' ) AND ( `position` = 'wxqr' ) ORDER BY sort DESC  [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+NOTIC: [2] explode() expects parameter 2 to be string, array given D:\www\yaheng\include\Library\Think\Template.class.php 第 169 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\yaheng\include\Library\Think\Template.class.php 第 170 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

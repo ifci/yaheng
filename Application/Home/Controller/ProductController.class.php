@@ -20,6 +20,13 @@ class ProductController extends BaseController {
         $cid ? $map['cid']=$cid : false;
         $map['sid']=$sid;
 
+        $pid = $C -> where('cid='.$cid) -> getField('pid');
+        /*if(!$pid){
+            $list =
+        }*/
+        $cidArr = $C->where('pid='.$cid)->select();   //获取一级分类下的cid
+        $arr = [];
+        dump($cidArr);
 
 
 
@@ -46,6 +53,7 @@ class ProductController extends BaseController {
 
         $this -> assign('season', $season);
 
+
         /*输出默认产品*/
         $count = $P->table($P->getTableName().' p')
 //            ->join($C->getTableName().' c on c.cid=p.cid')
@@ -61,6 +69,7 @@ class ProductController extends BaseController {
             ->where($map)->order('id desc')->limit("$page->firstRow, $page->listRows")->select();*/
         $list = $P -> where($map) -> limit("$page->firstRow, $page->listRows") -> order('id desc') -> select();
         $this->assign("list", $list);
+
 
         $this->assign('webtitle',L('T_PRODUCT'));
         $this->display();

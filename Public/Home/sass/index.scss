@@ -130,7 +130,6 @@ html, body {
 
 .slide-3{
   border-top: 1px solid #343435;
-  @extend %ffst;
   margin: 20px 0 0 0;
   color: #fff;
   padding-top: 20px;
@@ -152,7 +151,6 @@ html, body {
   width: 30%;
   padding-left: 4%;
   @include fz(18px);
-  @extend %ffst;
   color: #000;
   margin-top: 20px;
 }
@@ -219,7 +217,6 @@ html, body {
 .slide-14{
   margin: 10px 0 0 -10%;
   @include align;
-//  @extend %ffst;
   @include fz(16px);
   color: #333;
   line-height: 1.6;
